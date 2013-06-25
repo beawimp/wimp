@@ -1,12 +1,15 @@
 <?php
-/**
- * The template for displaying image attachments.
- *
- * @package WIMP
- */
+	/**
+	 * The template for displaying image attachments.
+	 *
+	 * @package WIMP
+	 * @author Cole Geissinger <cole@beawimp.org>
+	 *
+	 * @version 1.0
+	 * @since   2.0
+	 */
 
-get_header();
-?>
+	get_header(); ?>
 
 	<div id="primary" class="content-area image-attachment">
 		<div id="content" class="site-content" role="main">
@@ -91,4 +94,4 @@ get_header();
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>
+	<?php get_footer(); ?>

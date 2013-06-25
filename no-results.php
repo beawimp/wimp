@@ -1,11 +1,15 @@
 <?php
-/**
- * The template part for displaying a message that posts cannot be found.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WIMP
- */
+	/**
+	 * The template part for displaying a message that posts cannot be found.
+	 *
+	 * Learn more: http://codex.wordpress.org/Template_Hierarchy
+	 *
+	 * @package WIMP
+	 * @author Cole Geissinger <cole@beawimp.org>
+	 *
+	 * @version 1.0
+	 * @since   2.0
+	 */
 ?>
 
 <article id="post-0" class="post no-results not-found">

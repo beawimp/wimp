@@ -1,9 +1,13 @@
 <?php
-/**
- * The Sidebar containing the main widget areas.
- *
- * @package WIMP
- */
+	/**
+	 * The Sidebar containing the main widget areas.
+	 *
+	 * @package WIMP
+	 * @author Cole Geissinger <cole@beawimp.org>
+	 *
+	 * @version 1.0
+	 * @since   2.0
+	 */
 ?>
 	<div id="secondary" class="widget-area" role="complementary">
 		<?php do_action( 'before_sidebar' ); ?>

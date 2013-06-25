@@ -1,0 +1,90 @@
+/* =Content
+----------------------------------------------- */
+
+//.sticky {  }
+.hentry { margin: 0 0 1.5em; }
+.byline { display: none; }
+.single .byline, .group-blog .byline { display: inline; }
+.entry-content, .entry-summary { margin: 1.5em 0 0; }
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title, .archive .format-aside .entry-title { display: none; }
+
+
+/* =Media
+----------------------------------------------- */
+
+.entry-content img.wp-smiley, .comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+	img[class*="wp-image-"] {
+		display: block;
+		margin: 1.2% auto 0;
+		max-width: 98%;
+	}
+	.wp-caption-text {
+		margin: 0.8075em 0;
+		text-align: center;
+	}
+}
+.site-content {
+	.gallery { margin-bottom: 1.5em;
+		a img {
+			border: none;
+			height: auto;
+			max-width: 90%;
+		}
+		dd { margin: 0; }
+	}
+}
+//.gallery-caption {  }
+//.site-content .gallery-columns-4 .gallery-item {
+	//img {  }
+//}
+
+
+
+
+/* =Comments
+----------------------------------------------- */
+
+.comment-content a { word-wrap: break-word; }
+//.bypostauthor {  }
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget { margin: 0 0 1.5em;
+	select { max-width: 100%; } // Make sure select elements fit in widgets
+}
+
+// Search widget
+.widget_search .submit { display: none; }
+
+/* =Infinite Scroll
+----------------------------------------------- */
+
+// Globally hidden elements when Infinite Scroll is supported and in use.
+.infinite-scroll {
+	.navigation-paging, // Older / Newer Posts Navigation (always hidden)
+	&.neverending .site-footer { // Theme Footer (when set to scrolling)
+		display: none;
+	}
+}
+
+// When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before
+.infinity-end.neverending .site-footer { display: block; }

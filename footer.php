@@ -1,26 +1,30 @@
 <?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content after
- *
- * @package WIMP
- */
+	/**
+	 * The template for displaying the footer.
+	 *
+	 * Contains the closing of the id=main div and all content after
+	 *
+	 * @package WIMP
+	 * @author Cole Geissinger <cole@beawimp.org>
+	 *
+	 * @version 1.0
+	 * @since   2.0
+	 */
 ?>
 
-	</div><!-- #main -->
+			</div><!--[END #main]-->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'wimp_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'wimp' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'wimp' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'wimp' ), 'WIMP', '<a href="http://www.colegeissinger.com" rel="designer">Cole Geissinger</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+			<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="site-info">
+					<?php do_action( 'wimp_credits' ); ?>
+					<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'wimp' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'wimp' ), 'WordPress' ); ?></a>
+					<span class="sep"> | </span>
+					<?php printf( __( 'Theme: %1$s by %2$s.', 'wimp' ), 'WIMP', '<a href="http://www.colegeissinger.com" rel="designer">Cole Geissinger</a>' ); ?>
+				</div><!--[END .site-info]-->
+			</footer><!--[END #colophon]-->
+		</div><!--[END #page]-->
 
-<?php wp_footer(); ?>
+		<?php wp_footer(); ?>
 
-</body>
+	</body>
 </html>
