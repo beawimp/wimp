@@ -1,11 +1,7 @@
 <?php
-	/**
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
-	 *
-	 * @version 1.0
-	 * @since   2.0
-	 */
+/**
+ * @package wimp
+ */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -52,7 +48,6 @@
 				$tags_list = get_the_tag_list( '', __( ', ', 'wimp' ) );
 				if ( $tags_list ) :
 			?>
-			<span class="sep"> | </span>
 			<span class="tags-links">
 				<?php printf( __( 'Tagged %1$s', 'wimp' ), $tags_list ); ?>
 			</span>
@@ -60,10 +55,9 @@
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="sep"> | </span>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'wimp' ), __( '1 Comment', 'wimp' ), __( '% Comments', 'wimp' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'wimp' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'wimp' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->

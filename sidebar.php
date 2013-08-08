@@ -1,37 +1,38 @@
 <?php
-	/**
-	 * The Sidebar containing the main widget areas.
-	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
-	 *
-	 * @version 1.0
-	 * @since   2.0
-	 */
+/**
+ * The Sidebar containing the main widget areas.
+ *
+ * @package wimp
+ */
 ?>
-	<div id="secondary" class="widget-area" role="complementary">
-		<?php do_action( 'before_sidebar' ); ?>
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-
-			<aside id="search" class="widget widget_search">
-				<?php get_search_form(); ?>
-			</aside>
-
-			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'wimp' ); ?></h1>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
-
-			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'wimp' ); ?></h1>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
-
-		<?php endif; // end sidebar widget area ?>
-	</div><!-- #secondary -->
+<section class="sidebar">
+	<aside class="wimp-wiki widget">
+		<h3 class="title"><a href="#">WIMP Wiki</a></h3>
+		<p>Learn from others or contribute to the collection of knowledge yourself.</p>
+	</aside>
+	<aside class="community-wimp widget">
+		<h3 class="title"><a href="#">Community Wall</a></h3>
+		<p>Ask a person, not a search engine.</p>
+		<p>Recent Posts</p>
+		<ul>
+			<li><a href="#">What do you all think about this guide to smarter UI?</a></li>
+			<li><a href="#">Does anyone have a recommendation for delivering high quality streaming...</a></li>
+		</ul>
+	</aside>
+	<aside class="find-a-wimp widget">
+		<h3 class="title"><a href="#">Find A Wimp</a></h3>
+		<p>Hire a specialist in:</p>
+		<ul>
+			<li><a href="#">Design</a></li>
+			<li><a href="#">Programming</a></li>
+			<li><a href="#">Marketing/Social Media</a></li>
+			<li><a href="#">SEO</a></li>
+			<li><a href="#">WordPress</a></li>
+			<li><a href="#">Other</a></li>
+		</ul>
+	</aside>
+	<aside class="meetup widget last">
+		<h3 class="title"><a href="#">Be A Wimp</a></h3>
+		<p>Join us. It’s fun!</p>
+	</aside>
+</section>

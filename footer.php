@@ -4,25 +4,34 @@
 	 *
 	 * Contains the closing of the id=main div and all content after
 	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
-	 *
-	 * @version 1.0
-	 * @since   2.0
+	 * @package wimp
 	 */
 ?>
 
-			</div><!--[END #main]-->
-
-			<footer id="colophon" class="site-footer" role="contentinfo">
-				<div class="site-info">
-					<?php do_action( 'wimp_credits' ); ?>
-					<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'wimp' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'wimp' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( __( 'Theme: %1$s by %2$s.', 'wimp' ), 'WIMP', '<a href="http://www.colegeissinger.com" rel="designer">Cole Geissinger</a>' ); ?>
-				</div><!--[END .site-info]-->
-			</footer><!--[END #colophon]-->
-		</div><!--[END #page]-->
+				<footer class="main-footer" role="contentinfo">
+					<nav class="footer-nav">
+						<ul class="nav">
+							<li><a href="#">Press Kit</a></li>
+							<li><a href="#">Terms of Use</a></li>
+							<li><a href="#">Supporters</a></li>
+							<li><a href="#">Donations</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+					<div class="social-media-links">
+						<ul class="nav">
+							<li><a href="#">Facebook</a></li>
+							<li><a href="#">Twitter</a></li>
+							<li><a href="#">RSS</a></li>
+							<li><a href="#">Meetup</a></li>
+						</ul>
+					</div>
+					<div class="copyright">
+						<p>Copyright &copy; 2011 - <?php echo date( 'Y' ); ?> Web and Interactive Media Professionals. All Rights Reserved.</p>
+					</div>
+				</footer>
+			</section>
+		</div>
 
 		<?php wp_footer(); ?>
 

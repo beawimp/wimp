@@ -1,47 +1,74 @@
 <?php
-	/**
-	 * The Header for our theme.
-	 *
-	 * Displays all of the <head> section and everything up till <div id="main">
-	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
-	 *
-	 * @version 1.0
-	 * @since   2.0
-	 */
+/**
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="main">
+ *
+ * @package wimp
+ */
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta name="viewport" content="width=device-width" />
-
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width">
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 		<?php wp_head(); ?>
 	</head>
 
 	<body <?php body_class(); ?>>
-	<div id="page" class="hfeed site">
-
-		<?php do_action( 'before' ); ?>
-
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<!--[if lt IE 7]>
+			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<section class="top-header-wrapper">
+			<div class="container">
+				<div class="row">
+					<aside class="slogan">
+						<p><?php echo bloginfo( 'description' ); ?></p>
+					</aside>
+					<div class="logins">
+						<div class="row-fluid">
+							<form action="" class="login-forms form-inline">
+								<input type="text" name="" id="" placeholder="username">
+								<input type="text" name="" id="" placeholder="password">
+								<button type="submit" class="btn btn-default">Log In</button>
+							</form>
+							<div class="login-meta">
+								<a href="#">Forgot Password</a> | <a href="#">Be a WIMP</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-
-			<nav id="site-navigation" class="navigation-main" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'wimp' ); ?></h1>
-				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'wimp' ); ?>"><?php _e( 'Skip to content', 'wimp' ); ?></a></div>
-
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- #site-navigation -->
-		</header><!-- #masthead -->
-
-		<div id="main" class="site-main">
+		</section>
+		<section class="container">
+			<div class="row">
+				<header role="banner" class="main-header">
+					<div class="logo">
+						<a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wimp-logo.png" /></a>
+					</div>
+					<div class="navbar main-nav" role="banner">
+						<div class="container">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+								<span class="icon-bar"></span>
+						      <span class="icon-bar"></span>
+						      <span class="icon-bar"></span>
+							</button>
+							<div class="nav-collapse collapse navbar-responsive-collapse">
+								<?php wp_nav_menu( array(
+									'theme_location' => 'primary',
+									'container'		  => '',
+									'menu_class'	  => 'nav navbar-nav',
+									'walker'			  => new Bootstrap_Walker_Nav_Menu(),
+								) ); ?>
+							</div>
+						</div>
+					</div>
+				</header>
+			</div>
+		</section>
+		<div class="container">
+			<section class="row main-wrapper">

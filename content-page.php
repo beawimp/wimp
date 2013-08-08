@@ -1,13 +1,9 @@
 <?php
-	/**
-	 * The template used for displaying page content in page.php
-	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
-	 *
-	 * @version 1.0
-	 * @since   2.0
-	 */
+/**
+ * The template used for displaying page content in page.php
+ *
+ * @package wimp
+ */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

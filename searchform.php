@@ -1,16 +1,14 @@
 <?php
-	/**
-	 * The template for displaying search forms in WIMP
-	 *
-	 * @package WIMP
-	 * @author Cole Geissinger <cole@beawimp.org>
-	 *
-	 * @version 1.0
-	 * @since   2.0
-	 */
+/**
+ * The template for displaying search forms in wimp
+ *
+ * @package wimp
+ */
 ?>
-<form method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-	<label for="s" class="screen-reader-text"><?php _ex( 'Search', 'assistive text', 'wimp' ); ?></label>
-	<input type="search" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'wimp' ); ?>" />
-	<input type="submit" class="submit" id="searchsubmit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'wimp' ); ?>" />
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label>
+		<span class="screen-reader-text"><?php _ex( 'Search for:', 'label', 'wimp' ); ?></span>
+		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'wimp' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s" title="<?php _ex( 'Search for:', 'label', 'wimp' ); ?>">
+	</label>
+	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'wimp' ); ?>">
 </form>
