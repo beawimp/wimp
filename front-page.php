@@ -43,7 +43,7 @@ get_header(); ?>
 						<div class="post-content"<?php echo ( ! has_post_thumbnail() ) ? ' class="no-feat-image"' : ''; ?>>
 							<header class="post-header">
 								<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<p class="post-meta">By <?php the_author_posts_link(); ?> -- <?php the_time(); ?></p>
+								<p class="post-meta">By <?php the_author_posts_link(); ?> -- <?php the_time( 'D d, Y' ); ?></p>
 							</header>
 							<p class="post-excerpt"><?php the_excerpt(); ?></p>
 							<p class="read-more"><a href="<?php the_permalink(); ?>">read more -></a></p>
@@ -55,10 +55,11 @@ get_header(); ?>
 							<a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 						<?php endif; ?>
 						<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<p class="post-meta">By <?php the_author_posts_link(); ?> -- <?php the_time(); ?></p>
+						<p class="post-meta">By <?php the_author_posts_link(); ?> -- <?php the_time( 'D d, Y' ); ?></p>
 					</article>
 				<?php endif;
 			endwhile;
+			
 		?>
 	</section>
 	<?php get_sidebar(); ?>

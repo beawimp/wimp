@@ -68,23 +68,6 @@
 							) ); ?>
 						</div>
 					</nav>
-					<!-- <div class="navbar main-nav" role="banner">
-						<div class="container">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-								<span class="icon-bar"></span>
-						      <span class="icon-bar"></span>
-						      <span class="icon-bar"></span>
-							</button>
-							<div class="nav-collapse collapse navbar-responsive-collapse">asdf
-								<?php wp_nav_menu( array(
-									'theme_location' => 'primary',
-									'container'		 => '',
-									'menu_class'	 => 'nav navbar-nav',
-									'walker'		 => new Bootstrap_Walker_Nav_Menu(),
-								) ); ?>
-							</div>
-						</div>
-					</div> -->
 				</header>
 			</div>
 		</section>
