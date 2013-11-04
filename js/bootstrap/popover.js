@@ -1,8 +1,8 @@
 /* ========================================================================
  * Bootstrap: popover.js v3.0.0
- * http://twitter.github.com/bootstrap/javascript.html#popovers
+ * http://getbootstrap.com/javascript/#popovers
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyright 2013 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,8 @@
   var Popover = function (element, options) {
     this.init('popover', element, options)
   }
+
+  if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
   Popover.DEFAULTS = $.extend({} , $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right'
@@ -56,7 +58,9 @@
 
     $tip.removeClass('fade top bottom left right in')
 
-    $tip.find('.popover-title:empty').hide()
+    // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
+    // this manually by checking the contents.
+    if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
   }
 
   Popover.prototype.hasContent = function () {
@@ -73,13 +77,13 @@
             o.content)
   }
 
+  Popover.prototype.arrow = function () {
+    return this.$arrow = this.$arrow || this.tip().find('.arrow')
+  }
+
   Popover.prototype.tip = function () {
     if (!this.$tip) this.$tip = $(this.options.template)
     return this.$tip
-  }
-
-  Popover.prototype.destroy = function () {
-    this.hide().$element.off('.' + this.type).removeData(this.type)
   }
 
 

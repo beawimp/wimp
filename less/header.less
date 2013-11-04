@@ -9,62 +9,77 @@
 	padding:5px 0;
 	z-index:99999;
 	.slogan {
-		.make-column(4);
 		padding:3px 0;
+		font-size:@header-font-size + 5.9;
+		.make-lg-column(4);
 	}
 	.logins {
 		padding-right:0 !important;
-		.make-column(8);
+		.make-lg-column(8);
 		input[type="text"] {
 			width:43%;
-			height:auto;
+			height:33px;
 			font-size:@header-font-size;
 			padding:@header-padding;
 		}
 		button.btn {
 			font-size:@header-font-size;
 			padding:@header-padding;
+			background:#d48309;
+			border:none;
+			color:#fff;
+			text-transform:uppercase;
+			height:33px;
+			.border-radius(0)
 		}
 	}
 	.login-forms {
-		.make-column(8);
+		.make-lg-column(8);
 	}
 	.login-meta {
 		padding:3px 0 !important;
 		text-align:right;
-		.make-column(3);
+		position:relative;
+		top:5px;
+		.make-lg-column(3);
 	}
 	p { margin:0; }
 	a { color:#fff; }
 }
 body.admin-bar .top-header-wrapper {
-	top:28px;
+	top:32px;
 }
 .main-header {
 	margin:33px 0 15px;
 	.clearfix();
 	.logo {
-		.make-column(4);
+		.make-lg-column(4);
 	}
-	.main-nav {
+	.navbar {
 		background:none;
 		border-bottom:7px solid #115ba0;
 		padding:0 !important;
 		margin:0;
 		position:relative;
 		top:77px;
-		.make-column(8);
+		.make-lg-column(8);
+	}
+	.navbar-collapse {
+		padding:0;
 	}
 	.navbar-nav {
 		float:none;
 		> li {
-			padding:0 25px 10px 0;
+			padding:0 22px 10px 0;
 			&.last { padding-right:0; }
 			> a {
 				font-size:15.25px;
 				padding:0;
 				color:#115ca1;
 				text-transform:uppercase;
+				&:hover {
+					color:#000;
+				}
 			}
 		}
 		.dropdown-menu {

@@ -31,7 +31,7 @@
 					</div>
 				</footer>
 			</section>
-		</div>
+		</section>
 
 		<?php wp_footer(); ?>
 

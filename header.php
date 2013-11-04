@@ -44,31 +44,49 @@
 				</div>
 			</div>
 		</section>
-		<section class="container">
+		<section class="header-wrapper container">
 			<div class="row">
 				<header role="banner" class="main-header">
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wimp-logo.png" /></a>
 					</div>
-					<div class="navbar main-nav" role="banner">
+					<nav class="navbar" role="navigation">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="iconbar"></span>
+								<span class="iconbar"></span>
+								<span class="iconbar"></span>
+							</button>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<?php wp_nav_menu( array(
+								'theme_location' => 'primary',
+								'container'		 => '',
+								'menu_class'	 => 'nav navbar-nav',
+								'walker'		 => new Bootstrap_Walker_Nav_Menu(),
+							) ); ?>
+						</div>
+					</nav>
+					<!-- <div class="navbar main-nav" role="banner">
 						<div class="container">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 								<span class="icon-bar"></span>
 						      <span class="icon-bar"></span>
 						      <span class="icon-bar"></span>
 							</button>
-							<div class="nav-collapse collapse navbar-responsive-collapse">
+							<div class="nav-collapse collapse navbar-responsive-collapse">asdf
 								<?php wp_nav_menu( array(
 									'theme_location' => 'primary',
-									'container'		  => '',
-									'menu_class'	  => 'nav navbar-nav',
-									'walker'			  => new Bootstrap_Walker_Nav_Menu(),
+									'container'		 => '',
+									'menu_class'	 => 'nav navbar-nav',
+									'walker'		 => new Bootstrap_Walker_Nav_Menu(),
 								) ); ?>
 							</div>
 						</div>
-					</div>
+					</div> -->
 				</header>
 			</div>
 		</section>
-		<div class="container">
+		<section class="main container">
 			<section class="row main-wrapper">

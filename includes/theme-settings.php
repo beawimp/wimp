@@ -16,7 +16,7 @@
 	/**
 	 * Theme version... yup. Meow.
 	 */
-	$theme_version = '1.0a-080713';
+	$theme_version = '1.0a-11032013';
 
 
 	/**
@@ -66,7 +66,7 @@
 	function wimp_theme_resources() {
 		global $theme_version;
 
-		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Quicksand:400,700' );
+		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Quicksand:300,400,700' );
 		wp_enqueue_style( 'wimp-styles', get_stylesheet_directory_uri() . '/css/app.css' );
 
 		wp_deregister_script( 'jquery' );

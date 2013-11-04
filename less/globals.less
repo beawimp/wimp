@@ -1,12 +1,20 @@
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-body { padding:32px 0 0; }
-
+body {
+	padding:32px 0 0;
+}
+body, h1, h2, h3, h4, h5, h6 {
+	font-family:@quicksand;
+}
+p {
+	font-size:15px;
+	line-height:20px;
+}
 
 .title {
 	color:#0a477f;
-	font-size:32px;
+	font-size:32.33px;
 	font-weight:normal;
-	margin:20px 0 5px;
+	margin:20px 0 16px;
 }
 
 .subtitle {
@@ -39,4 +47,9 @@ body { padding:32px 0 0; }
 	li {
 		.pull-left;
 	}
+}
+
+img {
+	max-width:100%;
+	height:auto;
 }

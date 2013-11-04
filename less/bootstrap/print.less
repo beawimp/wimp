@@ -26,7 +26,6 @@
   }
 
   // Don't show links for images, or javascript/internal links
-  .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
@@ -67,6 +66,12 @@
     page-break-after: avoid;
   }
 
+  // Chrome (OSX) fix for https://github.com/twbs/bootstrap/issues/11245
+  // Once fixed, we can just straight up remove this.
+  select {
+    background: #fff !important;
+  }
+
   // Bootstrap components
   .navbar {
     display: none;
@@ -86,4 +91,15 @@
   .label {
     border: 1px solid #000;
   }
+
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table-bordered {
+    th,
+    td {
+      border: 1px solid #ddd !important;
+    }
+  }
+
 }
