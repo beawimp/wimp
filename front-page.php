@@ -14,11 +14,7 @@
 get_header(); ?>
 	<section class="main-body">
 		<div class="header-image">
-			<?php if ( has_post_thumbnail() ) {
-				the_post_thumbnail();
-			}  else { ?>
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hero-image.jpg" />
-			<?php } ?>
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hero-image.jpg" />
 		</div>
 		<article class="featured-meetup">
 			<header class="meetup-header">
@@ -59,7 +55,7 @@ get_header(); ?>
 					</article>
 				<?php endif;
 			endwhile;
-			
+			wp_reset_query();
 		?>
 	</section>
 	<?php get_sidebar(); ?>

@@ -6080,7 +6080,6 @@ img {
 }
 .top-header-wrapper .slogan {
   padding: 3px 0;
-  font-size: 18.9px;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6091,6 +6090,9 @@ img {
     float: left;
     width: 33.33333333333333%;
   }
+}
+.top-header-wrapper .slogan p {
+  font-size: 18.9px;
 }
 .top-header-wrapper .logins {
   padding-right: 0 !important;
@@ -6233,12 +6235,14 @@ body.admin-bar .top-header-wrapper {
 }
 .main-header .navbar-nav > li > a:hover {
   color: #000;
+  background: none;
 }
 .main-header .navbar-nav .dropdown-menu {
   padding: 0;
-  margin-top: 7px;
+  margin: 0;
   border: none;
   background: #0081bb;
+  border-top: 7px solid #115ba0;
   -webkit-box-shadow: 0 !important;
   box-shadow: 0 !important;
 }
@@ -6246,10 +6250,24 @@ body.admin-bar .top-header-wrapper {
   width: 100%;
   display: block;
 }
+.main-header .navbar-nav .dropdown-menu li:hover .sub-menu {
+  visibility: visible;
+}
 .main-header .navbar-nav .dropdown-menu a {
   color: #fff;
   font-size: 16px;
   padding: 3px 10px;
+  transition: background-color 0.2s;
+  -webkit-transition: background-color 0.2s;
+}
+.main-header .navbar-nav .dropdown-menu a:hover {
+  background-color: #115ba0;
+}
+.main-header .navbar-nav .sub-menu li:hover {
+  background-color: #115ba0;
+}
+.main-header .dropdown:hover .dropdown-menu {
+  display: block;
 }
 .main-wrapper {
   background: #ffffff url('../images/faux-sidebar.png') right top repeat-y;

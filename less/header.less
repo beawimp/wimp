@@ -10,8 +10,10 @@
 	z-index:99999;
 	.slogan {
 		padding:3px 0;
-		font-size:@header-font-size + 5.9;
 		.make-lg-column(4);
+		p {
+			font-size:@header-font-size + 5.9;
+		}
 	}
 	.logins {
 		padding-right:0 !important;
@@ -79,24 +81,40 @@ body.admin-bar .top-header-wrapper {
 				text-transform:uppercase;
 				&:hover {
 					color:#000;
+					background:none;
 				}
 			}
 		}
 		.dropdown-menu {
 			padding:0;
-			margin-top:7px;
+			margin:0;
 			border:none;
 			background:#0081bb;
+			border-top:7px solid #115ba0;
 			.box-shadow(0) !important;
 			li {
 				width:100%;
 				display:block;
+				&:hover .sub-menu {
+					visibility:visible;
+				}
 			}
 			a {
 				color:#fff;
 				font-size:16px;
 				padding:3px 10px;
+				transition:background-color .2s;
+				-webkit-transition:background-color .2s;
+				&:hover {
+					background-color:#115ba0;
+				}
 			}
 		}
+		.sub-menu li:hover {
+			background-color:#115ba0;
+		}
+	}
+	.dropdown:hover .dropdown-menu {
+		display:block;
 	}
 }

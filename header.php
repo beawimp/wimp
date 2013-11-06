@@ -52,14 +52,14 @@
 					</div>
 					<nav class="navbar" role="navigation">
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#wimp-nav">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="iconbar"></span>
 								<span class="iconbar"></span>
 								<span class="iconbar"></span>
 							</button>
 						</div>
-						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<div class="collapse navbar-collapse" id="wimp-nav">
 							<?php wp_nav_menu( array(
 								'theme_location' => 'primary',
 								'container'		 => '',
