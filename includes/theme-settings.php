@@ -49,10 +49,20 @@
 
 
 			/**
+			 * Adding some custom post image sizes :)
+			 */
+			if ( function_exists( 'add_image_size' ) ) { 
+				add_image_size( 'featured-post', 408, 305, true );
+				add_image_size( 'secondary-post', 408, 248, true );
+			}
+
+
+			/**
 			 * This theme uses wp_nav_menu() in one location.
 			 */
 			register_nav_menus( array(
 				'primary' => __( 'Primary Menu', 'wimp' ),
+				'footer'  => __( 'Footer Menu', 'wimp' ),
 			) );
 		}
 	endif; // wimp_setup

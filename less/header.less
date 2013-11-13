@@ -11,6 +11,7 @@
 	.slogan {
 		padding:3px 0;
 		.make-lg-column(4);
+		.make-md-column(4);
 		p {
 			font-size:@header-font-size + 5.9;
 		}
@@ -55,6 +56,10 @@ body.admin-bar .top-header-wrapper {
 	margin:33px 0 15px;
 	.clearfix();
 	.logo {
+		background:url( '../images/wimp-logo.png' ) 0 0 no-repeat;
+		width:347px;
+		height:124px;
+		.text-hide();
 		.make-lg-column(4);
 	}
 	.navbar {
@@ -79,7 +84,7 @@ body.admin-bar .top-header-wrapper {
 				padding:0;
 				color:#115ca1;
 				text-transform:uppercase;
-				&:hover {
+				&:hover, &:active {
 					color:#000;
 					background:none;
 				}
@@ -116,5 +121,56 @@ body.admin-bar .top-header-wrapper {
 	}
 	.dropdown:hover .dropdown-menu {
 		display:block;
+	}
+}
+@media (min-width:@screen-md-min) and (max-width: @screen-md-max) {
+	.top-header-wrapper {
+		.slogan {
+			padding:11px 0;
+			p {
+				font-size:@header-font-size + 3;
+			}
+		}
+		.logins {
+			.make-md-column(8);
+			input[type="text"] {
+				width:41%;
+				height:42px;
+			}
+			button.btn {
+				height:42px;
+			}
+		}
+		.login-forms {
+			.make-md-column(8);
+		}
+		.login-meta {
+			top:0;
+			.make-md-column(3);
+			a {
+				text-align:center;
+				display:block;
+			}
+			span {
+				display:none;
+			}
+		}
+	}
+	.main-header {
+		.logo {
+			background-position: 0 -134px;
+			width:729px;
+			height:93px;
+			margin:0 auto;
+			.make-lg-column(4);
+		}
+		.navbar {
+			top:13px;
+			margin-bottom:20px;
+		}
+		#wimp-nav {
+			line-height:0;
+			.center();
+		}
 	}
 }

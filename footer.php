@@ -10,20 +10,18 @@
 
 				<footer class="main-footer" role="contentinfo">
 					<nav class="footer-nav">
-						<ul class="nav">
-							<li><a href="#">Press Kit</a></li>
-							<li><a href="#">Terms of Use</a></li>
-							<li><a href="#">Supporters</a></li>
-							<li><a href="#">Donations</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
+						<?php wp_nav_menu( array(
+							'theme_location' => 'footer',
+							'container'		 => '',
+							'menu_class'	 => 'nav',
+						) ); ?>
 					</nav>
 					<div class="social-media-links">
 						<ul class="nav">
-							<li><a href="#">Facebook</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">RSS</a></li>
-							<li><a href="#">Meetup</a></li>
+							<li><a href="https://www.facebook.com/groups/northbaywebpros/" class="facebook">Facebook</a></li>
+							<li><a href="https://twitter.com/beawimp" class="twitter">Twitter</a></li>
+							<li><a href="<?php bloginfo( 'atom_url' ); ?>" class="rss">RSS</a></li>
+							<li><a href="http://www.meetup.com/beawimp/" class="meetup">Meetup</a></li>
 						</ul>
 					</div>
 					<div class="copyright">

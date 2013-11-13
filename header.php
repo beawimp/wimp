@@ -37,7 +37,7 @@
 								<button type="submit" class="btn btn-default">Log In</button>
 							</form>
 							<div class="login-meta">
-								<a href="#">Forgot Password</a> | <a href="#">Be a WIMP</a>
+								<a href="#">Forgot Password</a> <span>|</span> <a href="#">Be a WIMP</a>
 							</div>
 						</div>
 					</div>
@@ -48,7 +48,7 @@
 			<div class="row">
 				<header role="banner" class="main-header">
 					<div class="logo">
-						<a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wimp-logo.png" /></a>
+						<a href="<?php echo home_url(); ?>">WIMP | Web and Interactive Media Professionals</a>
 					</div>
 					<nav class="navbar" role="navigation">
 						<div class="navbar-header">

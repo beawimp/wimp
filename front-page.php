@@ -33,7 +33,7 @@ get_header(); ?>
 					<article class="row-fluid latest-post">
 						<?php if ( has_post_thumbnail() ) : ?>
 							<div class="featured-image">
-								<a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+								<a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail( 'featured-post' ); ?></a>
 							</div>
 						<?php endif; ?>
 						<div class="post-content"<?php echo ( ! has_post_thumbnail() ) ? ' class="no-feat-image"' : ''; ?>>
@@ -48,7 +48,7 @@ get_header(); ?>
 				<?php else : // If we are not loading the first, handle the last two
 					echo ( $post_count == 2 ) ? '<article class="second-post post">' : '<article class="third-post post">'; ?>
 						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+							<a href="<?php echo the_permalink(); ?>"><?php the_post_thumbnail( 'secondary-post' ); ?></a>
 						<?php endif; ?>
 						<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<p class="post-meta">By <?php the_author_posts_link(); ?> -- <?php the_time( 'D d, Y' ); ?></p>

@@ -2,3 +2,37 @@
 .border-radius(@radius) {
 	border-radius:@radius;
 }
+
+// Sprites and shit
+.sprites(@name) when (@name = 'facebook') {
+	.text-hide();
+	background:transparent url('../images/social-sprites.png') 0 0 no-repeat;
+	width:23px;
+	height:50px;
+}
+.sprites(@name) when (@name = 'twitter') {
+	.text-hide();
+	background:transparent url('../images/social-sprites.png') -185px 0 no-repeat;
+	width:50px;
+	height:41px;
+}
+.sprites(@name) when (@name = 'rss') {
+	.text-hide();
+	background:transparent url('../images/social-sprites.png') -125px 0 no-repeat;
+	width:50px;
+	height:50px;
+}
+.sprites(@name) when (@name = 'meetup') {
+	.text-hide();
+	background:transparent url('../images/social-sprites.png') -33px 0 no-repeat;
+	width:82px;
+	height:49px;
+}
+
+// Center text and if there is a UL tag we'll center that too
+.center() {
+	text-align:center;
+	> ul {
+		display:inline-block;
+	}
+}

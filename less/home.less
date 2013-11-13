@@ -20,3 +20,10 @@
 		padding-left:0;
 	}
 }
+@media (min-width:@screen-md-min) and (max-width: @screen-md-max) {
+	.home {
+		.featured-image, .post-content, .post {
+			.make-md-column(6);
+		}
+	}
+}

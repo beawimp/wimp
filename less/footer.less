@@ -1,4 +1,61 @@
 .main-footer {
 	clear:both;
-	
+	.make-lg-column(9);
+}
+.footer-nav {
+	font-size:16px;
+	.center();
+	.nav > li > a:hover, .nav > li > a:focus {
+		background:none;
+	}
+	&:after {
+		background:#fbfcfd;
+		content:'';
+		width:96.5%;
+		height:4px;
+		border:1px solid #d8e4e8;
+		position:absolute;
+		display:block;
+		top:41px;
+	}
+}
+.social-media-links {
+	margin:14px 0;
+	.center();
+	.nav > li > a:hover, .nav > li > a:focus {
+		background-color:transparent;
+	}
+	.facebook {
+		margin-right:72px;
+		.sprites('facebook');
+	}
+	.twitter {
+		margin-right:58px;
+		position:relative;
+		top:4px;
+		.sprites('twitter');
+	}
+	.rss {
+		margin-right:57px;
+		.sprites('rss');
+	}
+	.meetup {
+		.sprites('meetup');
+	}
+}
+.copyright {
+	text-align:center;
+	p {
+		font-size:12px;
+		color:#2b5272;
+		line-height:24px;
+	}
+}
+@media (min-width:@screen-md-min) and (max-width: @screen-md-max) {
+	.main-footer {
+		.make-md-column(9);
+	}
+	.copyright {
+		text-align:center;
+	}
 }

@@ -11,3 +11,14 @@
 		.make-lg-column(3);
 	}
 }
+@media (min-width:@screen-md-min) and (max-width: @screen-md-max) {
+	.main-wrapper {
+		background:#fff url('../images/faux-md-sidebar.gif') right top repeat-y;
+		.main-body {
+			.make-md-column(9);
+		}
+		.sidebar {
+			.make-md-column(3);
+		}
+	}
+}

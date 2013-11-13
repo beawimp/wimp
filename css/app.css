@@ -6091,6 +6091,12 @@ img {
     width: 33.33333333333333%;
   }
 }
+@media (min-width: 992px) {
+  .top-header-wrapper .slogan {
+    float: left;
+    width: 33.33333333333333%;
+  }
+}
 .top-header-wrapper .slogan p {
   font-size: 18.9px;
 }
@@ -6187,6 +6193,14 @@ body.admin-bar .top-header-wrapper {
   clear: both;
 }
 .main-header .logo {
+  background: url('../images/wimp-logo.png') 0 0 no-repeat;
+  width: 347px;
+  height: 124px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6233,7 +6247,8 @@ body.admin-bar .top-header-wrapper {
   color: #115ca1;
   text-transform: uppercase;
 }
-.main-header .navbar-nav > li > a:hover {
+.main-header .navbar-nav > li > a:hover,
+.main-header .navbar-nav > li > a:active {
   color: #000;
   background: none;
 }
@@ -6269,6 +6284,92 @@ body.admin-bar .top-header-wrapper {
 .main-header .dropdown:hover .dropdown-menu {
   display: block;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .top-header-wrapper .slogan {
+    padding: 11px 0;
+  }
+  .top-header-wrapper .slogan p {
+    font-size: 16px;
+  }
+  .top-header-wrapper .logins {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .top-header-wrapper .logins input[type="text"] {
+    width: 41%;
+    height: 42px;
+  }
+  .top-header-wrapper .logins button.btn {
+    height: 42px;
+  }
+  .top-header-wrapper .login-forms {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .top-header-wrapper .login-meta {
+    top: 0;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .top-header-wrapper .login-meta a {
+    text-align: center;
+    display: block;
+  }
+  .top-header-wrapper .login-meta span {
+    display: none;
+  }
+  .main-header .logo {
+    background-position: 0 -134px;
+    width: 729px;
+    height: 93px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .main-header .navbar {
+    top: 13px;
+    margin-bottom: 20px;
+  }
+  .main-header #wimp-nav {
+    line-height: 0;
+    text-align: center;
+  }
+  .main-header #wimp-nav > ul {
+    display: inline-block;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) {
+  .top-header-wrapper .logins {
+    float: left;
+    width: 66.66666666666666%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) {
+  .top-header-wrapper .login-forms {
+    float: left;
+    width: 66.66666666666666%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) {
+  .top-header-wrapper .login-meta {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 1200px) {
+  .main-header .logo {
+    float: left;
+    width: 33.33333333333333%;
+  }
+}
 .main-wrapper {
   background: #ffffff url('../images/faux-sidebar.png') right top repeat-y;
   border: 1px solid #d4e1e6;
@@ -6295,6 +6396,35 @@ body.admin-bar .top-header-wrapper {
   padding-right: 15px;
 }
 @media (min-width: 1200px) {
+  .main-wrapper .sidebar {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .main-wrapper {
+    background: #ffffff url('../images/faux-md-sidebar.gif') right top repeat-y;
+  }
+  .main-wrapper .main-body {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .main-wrapper .sidebar {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) {
+  .main-wrapper .main-body {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) {
   .main-wrapper .sidebar {
     float: left;
     width: 25%;
@@ -6353,6 +6483,24 @@ body.admin-bar .top-header-wrapper {
 .home .second-post {
   padding-left: 0;
 }
+@media (min-width: 992px) and (max-width: 1199px) {
+  .home .featured-image,
+  .home .post-content,
+  .home .post {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) {
+  .home .featured-image,
+  .home .post-content,
+  .home .post {
+    float: left;
+    width: 50%;
+  }
+}
 .sidebar {
   background: #E4EDF0;
 }
@@ -6391,4 +6539,116 @@ body.admin-bar .top-header-wrapper {
 }
 .main-footer {
   clear: both;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1200px) {
+  .main-footer {
+    float: left;
+    width: 75%;
+  }
+}
+.footer-nav {
+  font-size: 16px;
+  text-align: center;
+}
+.footer-nav > ul {
+  display: inline-block;
+}
+.footer-nav .nav > li > a:hover,
+.footer-nav .nav > li > a:focus {
+  background: none;
+}
+.footer-nav:after {
+  background: #fbfcfd;
+  content: '';
+  width: 96.5%;
+  height: 4px;
+  border: 1px solid #d8e4e8;
+  position: absolute;
+  display: block;
+  top: 41px;
+}
+.social-media-links {
+  margin: 14px 0;
+  text-align: center;
+}
+.social-media-links > ul {
+  display: inline-block;
+}
+.social-media-links .nav > li > a:hover,
+.social-media-links .nav > li > a:focus {
+  background-color: transparent;
+}
+.social-media-links .facebook {
+  margin-right: 72px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  background: transparent url('../images/social-sprites.png') 0 0 no-repeat;
+  width: 23px;
+  height: 50px;
+}
+.social-media-links .twitter {
+  margin-right: 58px;
+  position: relative;
+  top: 4px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  background: transparent url('../images/social-sprites.png') -185px 0 no-repeat;
+  width: 50px;
+  height: 41px;
+}
+.social-media-links .rss {
+  margin-right: 57px;
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  background: transparent url('../images/social-sprites.png') -125px 0 no-repeat;
+  width: 50px;
+  height: 50px;
+}
+.social-media-links .meetup {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  background: transparent url('../images/social-sprites.png') -33px 0 no-repeat;
+  width: 82px;
+  height: 49px;
+}
+.copyright {
+  text-align: center;
+}
+.copyright p {
+  font-size: 12px;
+  color: #2b5272;
+  line-height: 24px;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .main-footer {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .copyright {
+    text-align: center;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (min-width: 992px) {
+  .main-footer {
+    float: left;
+    width: 75%;
+  }
 }
