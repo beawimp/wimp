@@ -26,7 +26,7 @@
 		<section class="top-header-wrapper">
 			<div class="container">
 				<div class="row">
-					<aside class="slogan">
+					<aside class="slogan hidden-sm hidden-xs">
 						<p><?php echo bloginfo( 'description' ); ?></p>
 					</aside>
 					<div class="logins">

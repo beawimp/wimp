@@ -1,22 +1,32 @@
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+// Typography
 body {
 	padding:32px 0 0;
 }
 body, h1, h2, h3, h4, h5, h6 {
 	font-family:@quicksand;
 }
-p {
+h3 {
+	font-size:18px;
+	font-weight:bold;
+}
+h4{
+	font-size:15px;
+	color:#d48309;
+	line-height:20px;
+	margin-bottom:5px;
+}
+p, li {
 	font-size:15px;
 	line-height:20px;
 }
-
-.title {
+.title, h1, h2.title {
 	color:#0a477f;
 	font-size:32.33px;
 	font-weight:normal;
 	margin:20px 0 16px;
 }
-
 .subtitle {
 	color:#000;
 	font-size:18px;
@@ -35,12 +45,19 @@ p {
 .post-meta {
 	text-transform:uppercase;
 }
-
 .read-more {
 	text-align:right;
 	a {
 		color:#d48309;
 	}
+}
+.alignright {
+	.pull-right();
+	margin-left:20px;
+}
+.alignleft {
+	.pull-left();
+	margin-right:20px;
 }
 
 .nav {
@@ -52,4 +69,23 @@ p {
 img {
 	max-width:100%;
 	height:auto;
+}
+
+.edit-link {
+	position:absolute;
+	right:15px;
+	top:15px;
+	a {
+		background:#428bca;
+		border-radius:10px;
+		opacity:.5;
+		padding:5px 15px;
+		color:#fff;
+		transition:opacity .2s;
+		-webkit-transition:opacity .2s;
+		&:hover {
+			text-decoration:none;
+			opacity:1;
+		}
+	}
 }

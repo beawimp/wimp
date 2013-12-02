@@ -17,7 +17,7 @@
 			$class_names 	= $value = '';
 
 			$classes 		= empty( $item->classes ) ? array() : (array) $item->classes;
-			$classes[] 		= ( $args->has_children ) ? 'dropdown' : '';
+			$classes[] 		= ( isset( $args->has_children ) && $args->has_children ) ? 'dropdown' : '';
 			$classes[] 		= ( $item->current || $item->current_item_ancestor ) ? 'active' : '';
 			$classes[] 		= 'menu-item-' . $item->ID;
 
@@ -33,14 +33,14 @@
 			$attributes 	.= ! empty( $item->target )    ? ' target="' . esc_attr( $item->target ) .'"' : '';
 			$attributes 	.= ! empty( $item->xfn )       ? ' rel="'    . esc_attr( $item->xfn ) .'"' : '';
 			$attributes 	.= ! empty( $item->url )       ? ' href="'   . esc_attr( $item->url ) .'"' : '';
-			$attributes 	.= ( $args->has_children ) 	   ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
+			$attributes 	.= ( isset( $args->has_children ) && $args->has_children ) 	   ? ' class="dropdown-toggle"' : '';
 
-			$item_output 	= $args->before;
+			$item_output 	= ( isset( $args->before ) ) ? $args->before : '';
 			$item_output 	.= '<a' . $attributes . '>';
 			$item_output 	.= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 			// $item_output 	.= ( $args->has_children ) ? ' <b class="caret"></b></a>' : '</a>';
 			$item_output	.= '</a>';
-			$item_output 	.= $args->after;
+			$item_output 	.= ( isset( $args->after ) ) ? $args->after : '';
 
 			$output 	    .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}

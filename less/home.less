@@ -7,6 +7,8 @@
 	}
 	.featured-image, .post-content, .post {
 		.make-lg-column(6);
+		.make-md-column(6);
+		.make-sm-column(6);
 	}
 	.featured-image {
 		padding-left:0;
@@ -18,12 +20,5 @@
 	}
 	.second-post {
 		padding-left:0;
-	}
-}
-@media (min-width:@screen-md-min) and (max-width: @screen-md-max) {
-	.home {
-		.featured-image, .post-content, .post {
-			.make-md-column(6);
-		}
 	}
 }

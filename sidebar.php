@@ -5,7 +5,7 @@
  * @package wimp
  */
 ?>
-<section class="sidebar">
+<section class="sidebar hidden-sm hidden-xs">
 	<aside class="wimp-wiki widget">
 		<h3 class="title"><a href="#">WIMP Wiki</a></h3>
 		<p>Learn from others or contribute to the collection of knowledge yourself.</p>

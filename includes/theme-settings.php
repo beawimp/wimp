@@ -16,7 +16,7 @@
 	/**
 	 * Theme version... yup. Meow.
 	 */
-	$theme_version = '1.0a-11032013';
+	$theme_version = '1.0a-12012013';
 
 
 	/**

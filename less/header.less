@@ -19,6 +19,7 @@
 	.logins {
 		padding-right:0 !important;
 		.make-lg-column(8);
+		.make-md-column(8);
 		input[type="text"] {
 			width:43%;
 			height:33px;
@@ -38,6 +39,8 @@
 	}
 	.login-forms {
 		.make-lg-column(8);
+		.make-md-column(8);
+		.make-sm-column(8);
 	}
 	.login-meta {
 		padding:3px 0 !important;
@@ -45,6 +48,8 @@
 		position:relative;
 		top:5px;
 		.make-lg-column(3);
+		.make-md-column(3);
+		.make-sm-column(4);
 	}
 	p { margin:0; }
 	a { color:#fff; }
@@ -55,10 +60,11 @@ body.admin-bar .top-header-wrapper {
 .main-header {
 	margin:33px 0 15px;
 	.clearfix();
-	.logo {
+	.logo a {
 		background:url( '../images/wimp-logo.png' ) 0 0 no-repeat;
 		width:347px;
 		height:124px;
+		display:block;
 		.text-hide();
 		.make-lg-column(4);
 	}
@@ -123,7 +129,9 @@ body.admin-bar .top-header-wrapper {
 		display:block;
 	}
 }
-@media (min-width:@screen-md-min) and (max-width: @screen-md-max) {
+
+// Medium Screens
+@media (min-width:@screen-md-min) and (max-width: @screen-md-max), (min-width:@screen-sm-min) and (max-width: @screen-sm-max) {
 	.top-header-wrapper {
 		.slogan {
 			padding:11px 0;
@@ -132,7 +140,6 @@ body.admin-bar .top-header-wrapper {
 			}
 		}
 		.logins {
-			.make-md-column(8);
 			input[type="text"] {
 				width:41%;
 				height:42px;
@@ -141,12 +148,8 @@ body.admin-bar .top-header-wrapper {
 				height:42px;
 			}
 		}
-		.login-forms {
-			.make-md-column(8);
-		}
 		.login-meta {
 			top:0;
-			.make-md-column(3);
 			a {
 				text-align:center;
 				display:block;
@@ -157,12 +160,11 @@ body.admin-bar .top-header-wrapper {
 		}
 	}
 	.main-header {
-		.logo {
+		.logo a {
 			background-position: 0 -134px;
 			width:729px;
 			height:93px;
 			margin:0 auto;
-			.make-lg-column(4);
 		}
 		.navbar {
 			top:13px;
@@ -171,6 +173,24 @@ body.admin-bar .top-header-wrapper {
 		#wimp-nav {
 			line-height:0;
 			.center();
+		}
+	}
+}
+
+// Small Screens
+@media (min-width:@screen-sm-min) and (max-width: @screen-sm-max) {
+	.top-header-wrapper {
+		.logins {
+			input[type="text"] {
+				width:42%;
+			}
+		}
+	}
+	.main-header {
+		.navbar-nav {
+			> li {
+				padding:0 17px 10px 0;
+			}
 		}
 	}
 }
