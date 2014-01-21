@@ -84,7 +84,7 @@
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, THEME_VERSION );
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'wimp-scripts', get_stylesheet_directory_uri() . '/js/build/app.min.js', array( 'jquery' ), THEME_VERSION, true );
+		wp_enqueue_script( 'wimp-scripts', get_stylesheet_directory_uri() . '/js/build/app.min.js', array( 'jquery' ), THEME_VERSION, false );
 
 	}
 	add_action( 'wp_enqueue_scripts', 'wimp_theme_resources' );

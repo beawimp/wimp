@@ -10,16 +10,16 @@
 	z-index:99999;
 	.slogan {
 		padding:3px 0;
-		.make-lg-column(4);
 		.make-md-column(4);
+		.make-lg-column(4);
 		p {
 			font-size:@header-font-size + 5.9;
 		}
 	}
 	.logins {
 		padding-right:0 !important;
-		.make-lg-column(8);
 		.make-md-column(8);
+		.make-lg-column(8);
 		input[type="text"] {
 			width:43%;
 			height:33px;
@@ -38,21 +38,27 @@
 		}
 	}
 	.login-forms {
-		.make-lg-column(8);
-		.make-md-column(8);
+		.make-xs-column(12);
 		.make-sm-column(8);
+		.make-md-column(8);
+		.make-lg-column(8);
 	}
 	.login-meta {
 		padding:3px 0 !important;
 		text-align:right;
 		position:relative;
 		top:5px;
-		.make-lg-column(3);
-		.make-md-column(3);
+		.make-xs-column(12);
 		.make-sm-column(4);
+		.make-md-column(3);
+		.make-lg-column(3);
 	}
-	p { margin:0; }
-	a { color:#fff; }
+	p {
+		margin:0;
+	}
+	a {
+		color:#fff;
+	}
 }
 body.admin-bar .top-header-wrapper {
 	top:32px;
@@ -60,21 +66,31 @@ body.admin-bar .top-header-wrapper {
 .main-header {
 	margin:33px 0 15px;
 	.clearfix();
-	.logo a {
-		background:url( '../images/wimp-logo.png' ) 0 0 no-repeat;
-		width:347px;
-		height:124px;
-		display:block;
-		.text-hide();
+	.logo {
+		.make-xs-column(12);
+		.make-sm-column(12);
+		.make-md-column(12);
 		.make-lg-column(4);
+		a {
+			background:url( '../images/wimp-logo.png' ) 0 0 no-repeat;
+			width:347px;
+			height:124px;
+			display:block;
+			.text-hide();
+		}
 	}
 	.navbar {
 		background:none;
+		border:none;
 		border-bottom:7px solid #115ba0;
-		padding:0 !important;
+		border-radius:0px;
+		padding:0;
 		margin:0;
-		position:relative;
+		position:relative;	
 		top:77px;
+		.make-xs-column(12);
+		.make-sm-column(12);
+		.make-md-column(12);
 		.make-lg-column(8);
 	}
 	.navbar-collapse {
@@ -83,8 +99,10 @@ body.admin-bar .top-header-wrapper {
 	.navbar-nav {
 		float:none;
 		> li {
-			padding:0 22px 10px 0;
-			&.last { padding-right:0; }
+			padding:0 18px 10px 0;
+			&.last {
+				padding-right:0;
+			}
 			> a {
 				font-size:15.25px;
 				padding:0;
@@ -94,6 +112,10 @@ body.admin-bar .top-header-wrapper {
 					color:#000;
 					background:none;
 				}
+			}
+			&.active > a, &.active > a:hover {
+				color:#000;
+				background:none;
 			}
 		}
 		.dropdown-menu {
@@ -170,6 +192,9 @@ body.admin-bar .top-header-wrapper {
 			top:13px;
 			margin-bottom:20px;
 		}
+		.navbar-nav li {
+			padding:0 12px 10px 0 !important;
+		}
 		#wimp-nav {
 			line-height:0;
 			.center();
@@ -181,6 +206,9 @@ body.admin-bar .top-header-wrapper {
 @media (min-width:@screen-sm-min) and (max-width: @screen-sm-max) {
 	.top-header-wrapper {
 		.logins {
+			.login-forms {
+				float:left;
+			}
 			input[type="text"] {
 				width:42%;
 			}
@@ -191,6 +219,49 @@ body.admin-bar .top-header-wrapper {
 			> li {
 				padding:0 17px 10px 0;
 			}
+		}
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	body.admin-bar .top-header-wrapper {
+		top:0;
+	}
+	.top-header-wrapper {
+		position:relative;
+		.logins {
+			.login-forms {
+				text-align:center;
+			}
+			input[type="text"] {
+				width:38%;
+			}
+		}
+		.login-meta {
+			text-align:center;
+		}
+	}
+	.main-header {
+		margin-top:15px;
+		.logo a {
+			margin:0 auto;
+		}
+		.navbar {
+			top:0;
+			margin-top:15px;
+			background:lighten(@brand-primary, 45%);
+			.navbar-toggle {
+				outline:none;
+			}
+		}
+		.navbar-nav {
+			margin:0;
+			.dropdown-menu {
+				display:none !important;
+			}
+		}
+		.nav li {
+			float:none !important;
 		}
 	}
 }

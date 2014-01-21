@@ -16,7 +16,7 @@
 							'menu_class'	 => 'nav',
 						) ); ?>
 					</nav>
-					<div class="social-media-links">
+					<div class="social-media-links hidden-xs">
 						<ul class="nav">
 							<li><a href="https://www.facebook.com/groups/northbaywebpros/" class="facebook">Facebook</a></li>
 							<li><a href="https://twitter.com/beawimp" class="twitter">Twitter</a></li>

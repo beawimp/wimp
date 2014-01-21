@@ -32,7 +32,7 @@ function wimp_list_events( $options, $limit = 0 ) {
 						<h2 class="event-rsvp btn btn-primary"><a href="<?php echo esc_url( $event->event_url ); ?>">RSVP NOW</a></h2>
 						<p><a href="<?php echo esc_url( $event->event_url ); ?>"><?php echo intval( $event->yes_rsvp_count ); ?> attending</a></p>
 					<?php elseif ( $event->status == (  'suggested' || 'proposed' ) ) : ?>
-						<h2><?php echo esc_html( $event->status ); ?> Meetup</h2>
+						<h2 class="event-past"><?php echo esc_html( $event->status ); ?> Meetup</h2>
 						<p><a href="<?php echo esc_url( $event->event_url ); ?>"><?php echo intval( $event->yes_rsvp_count ); ?> RSVP</a></p>
 					<?php else : ?>
 						<p><a href="<?php echo esc_url( $event->event_url ); ?>"><?php echo intval( $event->yes_rsvp_count ); ?> RSVP</a></p>

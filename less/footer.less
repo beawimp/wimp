@@ -1,5 +1,8 @@
 .main-footer {
 	clear:both;
+	.make-xs-column(12);
+	.make-sm-column(12);
+	.make-md-column(9);
 	.make-lg-column(9);
 }
 .footer-nav {
@@ -51,11 +54,15 @@
 		line-height:24px;
 	}
 }
+
 @media (min-width:@screen-md-min) and (max-width: @screen-md-max) {
-	.main-footer {
-		.make-md-column(9);
-	}
 	.copyright {
 		text-align:center;
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	.nav > li > a{
+		padding:10px 11px;
 	}
 }

@@ -16,7 +16,7 @@ module.exports = function( grunt ) {
 		},
 		concat: {
 			app: {
-				src: ['js/**/*.js'],
+				src: ['js/libs/*.js', 'js/*.js'],
 				dest: 'js/build/app.js'
 			}
 		},

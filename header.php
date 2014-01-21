@@ -48,15 +48,15 @@
 			<div class="row">
 				<header role="banner" class="main-header">
 					<div class="logo">
-						<a href="<?php echo home_url(); ?>">WIMP | Web and Interactive Media Professionals</a>
+						<a href="<?php echo esc_url( home_url() ); ?>">WIMP | Web and Interactive Media Professionals</a>
 					</div>
-					<nav class="navbar" role="navigation">
+					<nav class="navbar navbar-default" role="navigation">
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#wimp-nav">
 								<span class="sr-only">Toggle navigation</span>
-								<span class="iconbar"></span>
-								<span class="iconbar"></span>
-								<span class="iconbar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
 							</button>
 						</div>
 						<div class="collapse navbar-collapse" id="wimp-nav">
