@@ -4,6 +4,7 @@
 	 * wimp functions and definitions
 	 *
 	 * @package wimp
+	 * @since 0.1.20140120
 	 */
 
 	/**
@@ -16,7 +17,7 @@
 	/**
 	 * Theme version... yup. Meow.
 	 */
-	$theme_version = '1.0a-12012013';
+	define( 'THEME_VERSION', '0.1.20140120' );
 
 
 	/**
@@ -71,18 +72,19 @@
 
 	/**
 	 * Add our themes css styles and scripts.
-	 * @return [type] [description]
+	 * @return void
+	 *
+	 * @version 0.1
+	 * @since 0.1.20140120
 	 */
 	function wimp_theme_resources() {
-		global $theme_version;
-
 		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Quicksand:300,400,700' );
-		wp_enqueue_style( 'wimp-styles', get_stylesheet_directory_uri() . '/css/app.css' );
+		wp_enqueue_style( 'wimp-styles', get_stylesheet_directory_uri() . '/css/app.min.css', null, THEME_VERSION );
 
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js' );
+		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, THEME_VERSION );
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'wimp-bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap/bootstrap.min.js', array( 'jquery' ), $theme_version, true );
+		wp_enqueue_script( 'wimp-scripts', get_stylesheet_directory_uri() . '/js/build/app.min.js', array( 'jquery' ), THEME_VERSION, true );
 
 	}
 	add_action( 'wp_enqueue_scripts', 'wimp_theme_resources' );

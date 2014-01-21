@@ -1,0 +1,58 @@
+.events-headline {
+	background:lighten( @brand-primary, 45% );
+	padding:10px;
+	margin:20px 0 0;
+}
+.events-wrapper {
+	list-style:none;
+	margin:0;
+	padding:0;
+	border-bottom:2px dashed lighten( @brand-primary, 30% );
+	.event-header {
+		.make-xs-column(12);
+		.make-sm-column(12);
+		.make-md-column(12);
+		.make-lg-column(12);
+	}
+	.event-date {
+		margin:0;
+		padding-bottom:20px;
+		font-weight:normal;
+		border-bottom:2px dashed lighten( @brand-primary, 30% );
+	}
+	.event-title {
+		margin:0;
+		padding-top:10px;
+		border-top:2px dashed lighten( @brand-primary, 30% );
+		a {
+			transition:color .2s;
+			-webkit-transition:color .2s;
+			&:hover {
+				text-decoration:none;
+				color:darken( @brand-primary, 20% );
+			}
+		}
+	}
+	.event-content {
+		padding-top:20px;
+		border-right:2px dashed lighten( @brand-primary, 30% );
+		.make-xs-column(10);
+		.make-sm-column(10);
+		.make-md-column(10);
+		.make-lg-column(10);
+	}
+	.event-meta {
+		padding-top:20px;
+		.make-xs-column(2);
+		.make-sm-column(2);
+		.make-md-column(2);
+		.make-lg-column(2);
+		.event-time {
+			display:block;
+			
+		}
+		.event-rsvp {
+			margin:10px 0;
+		}
+	}
+}

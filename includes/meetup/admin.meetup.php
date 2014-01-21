@@ -4,7 +4,7 @@
  * Sets a custom settings area for adding the Meetup API.
  *
  * @version  0.1
- * @since    1.0a-12012013
+ * @since    0.1.20140120
  */
 	
 /**
@@ -13,7 +13,7 @@
  * @return void
  *
  * @version  0.1
- * @since    1.0a-12012013
+ * @since    0.1.20140120
  */
 function wimp_meetup_init_settings() {
 
@@ -37,10 +37,10 @@ add_action( 'admin_init', 'wimp_meetup_init_settings' );
  * @return string
  *
  * @version  0.1
- * @since    1.0a-12012013
+ * @since    0.1.20140120
  */
 function wimp_meetup_settings_description() {
-	echo '<p>The place where all the cool kids store their Gigya API keys :D</p>';
+	echo '<p>The place where all the cool kids store their Meetup API key :D</p>';
 }
 
 
@@ -51,9 +51,9 @@ function wimp_meetup_settings_description() {
  * @return string
  *
  * @version  0.1
- * @since    1.0a-12012013
+ * @since    0.1.20140120
  */
 function wimp_meetup_text_field( $args ) {
 	$value = get_option( esc_attr( $args['name'] ) );
-	echo '<input type="text" name="' . $args['name'] . '" id="' . esc_attr( $args['id'] ) . '" class="regular-text" value="' . ( ! empty( $value ) ? esc_attr( $value ) : '' ) . '" />';
+	echo '<input type="text" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" class="regular-text" value="' . ( ! empty( $value ) ? esc_attr( $value ) : '' ) . '" />';
 }
