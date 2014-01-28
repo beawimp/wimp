@@ -1,5 +1,79 @@
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+// Simplify the Bootstrap responsive grid system classes into something useable...
+.one-col {
+	.make-xs-column(1);
+	.make-sm-column(1);
+	.make-md-column(1);
+	.make-lg-column(1);
+}
+.two-col {
+	.make-xs-column(2);
+	.make-sm-column(2);
+	.make-md-column(2);
+	.make-lg-column(2);
+}
+.three-col {
+	.make-xs-column(3);
+	.make-sm-column(3);
+	.make-md-column(3);
+	.make-lg-column(3);
+}
+.four-col {
+	.make-xs-column(12);
+	.make-sm-column(4);
+	.make-md-column(4);
+	.make-lg-column(4);
+}
+.five-col {
+	.make-xs-column(5);
+	.make-sm-column(5);
+	.make-md-column(5);
+	.make-lg-column(5);
+}
+.six-col {
+	.make-xs-column(6);
+	.make-sm-column(6);
+	.make-md-column(6);
+	.make-lg-column(6);
+}
+.seven-col {
+	.make-xs-column(7);
+	.make-sm-column(7);
+	.make-md-column(7);
+	.make-lg-column(7);
+}
+.eight-col {
+	.make-xs-column(8);
+	.make-sm-column(8);
+	.make-md-column(8);
+	.make-lg-column(8);
+}
+.nine-col {
+	.make-xs-column(9);
+	.make-sm-column(9);
+	.make-md-column(9);
+	.make-lg-column(9);
+}
+.ten-col {
+	.make-xs-column(10);
+	.make-sm-column(10);
+	.make-md-column(10);
+	.make-lg-column(10);
+}
+.eleven-col {
+	.make-xs-column(11);
+	.make-sm-column(11);
+	.make-md-column(11);
+	.make-lg-column(11);
+}
+.twelve-col {
+	.make-xs-column(12);
+	.make-sm-column(12);
+	.make-md-column(12);
+	.make-lg-column(12);
+}
+
 // Typography
 body {
 	padding:32px 0 0;
@@ -71,10 +145,16 @@ img {
 	height:auto;
 }
 
-.btn.btn-primary, .btn.btn-primary a {
-	color:#fff;
+.btn.btn-primary, .btn.btn-primary a, input[type="submit"], div.generic-button a {
+	font-size:@header-font-size !important;
+	padding:5px !important;
+	background:#d48309 !important;
+	border:none !important;
+	color:#fff !important;
+	text-transform:uppercase;
 	transition:background-color .2s;
 	-webkit-transition:background-color .2s;
+	.border-radius(0);
 	&:hover {
 		text-decoration:none;
 	}

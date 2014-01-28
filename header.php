@@ -29,18 +29,7 @@
 					<aside class="slogan hidden-sm hidden-xs">
 						<p><?php echo bloginfo( 'description' ); ?></p>
 					</aside>
-					<div class="logins">
-						<div class="row-fluid">
-							<form action="" class="login-forms form-inline">
-								<input type="text" name="" id="" placeholder="username">
-								<input type="text" name="" id="" placeholder="password">
-								<button type="submit" class="btn btn-default">Log In</button>
-							</form>
-							<div class="login-meta">
-								<a href="#">Forgot Password</a> <span>|</span> <a href="#">Be a WIMP</a>
-							</div>
-						</div>
-					</div>
+					<?php echo wimp_login_forms(); ?>
 				</div>
 			</div>
 		</section>

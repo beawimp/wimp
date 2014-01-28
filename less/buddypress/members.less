@@ -1,0 +1,46 @@
+#buddypress {
+	// Latest status
+	#latest-update {
+		font-size:20px;
+		color:#000;
+	}
+
+	// What's New Form
+	form#whats-new-form textarea {
+		padding:13px;
+		width:100%;
+		font-size:16px;
+		&:focus {
+			padding:5px;
+			outline:none;
+			border-color:#428bca !important;
+		}
+	}
+
+	// Profile
+	table.profile-fields tr td.label {
+		background:transparent;
+		color:#000;
+		display:block;
+		width:11%;
+		text-align:right;
+		border:none;
+	}
+
+	// Comments
+	div.activity-comments {
+		margin:5px 0 0 61px;
+		li:not(:last-child) {
+			border-bottom:1px solid #eee;
+		}
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	#bootstrap {
+		div.activity-meta a{
+			display:block;
+			margin-bottom:10px;
+		}
+	}
+}

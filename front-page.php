@@ -16,14 +16,7 @@ get_header(); ?>
 		<div class="header-image">
 			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hero-image.jpg" />
 		</div>
-		<article class="featured-meetup">
-			<header class="meetup-header">
-				<h2 class="title">Next Featured Meetup</h2>
-				<h3 class="subtitle">WIMP SpeedGeeking + Potluck</h3>
-				<p class="meetup-meta">Wednesday, June 26th, 2013 | 7:00PM | <a href="#">RSVPS: 30</a></p>
-			</header>
-			<p>Never speedgeeked? It's ok. We'll teach you! In a nutshell, "SpeedGeeking" is a tongue-in-check rip off of the speed dating concept. There will be a number of presenters setup with a 5 minute presentation around the room. The group of attendees will ...</p>
-		</article>
+		<?php echo do_shortcode( '[meetup]' ); ?>
 		<?php
 			$blog_posts = new WP_Query( array( 'posts_per_page' => 3 ) );
 			$post_count = 0; // Count our posts.

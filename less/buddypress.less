@@ -1,0 +1,59 @@
+@import "buddypress/activity.less";
+@import "buddypress/members.less";
+
+#buddypress {
+	// Search bar
+	div.dir-search input[type="text"] {
+		padding:5px;
+		font-weight:normal;
+	}
+
+	// Submit buttons
+	input[type="submit"] {
+		font-size:1.4rem;
+		padding:3px 10px 5px;
+	}
+
+	// Navigation
+	div.item-list-tabs {
+		ul li a, ul li.selected a, ul li.current a {
+			span {
+				background:#d48309;
+				color:#fff;
+				border:none;
+			}
+			&:hover span {
+				background:darken(#d48309, 8%);
+				color:#fff;
+				border:none;
+			}
+		}
+		&#subnav {
+			margin:0 0 20px;
+			border-top:1px solid #ccc;
+			background:#eee;
+			ul li.last {
+				padding-right:10px;
+				label {
+					font-weight:400;
+				}
+			}
+		}
+	}
+
+	// Buttons
+	a.button {
+		font-size:13px;
+		padding:5px 8px !important;
+	}
+
+	.button-nav {
+		.clearfix();
+		display:none;
+	}
+
+	// tables
+	table.notification-settings {
+		width:100%;
+	}
+}

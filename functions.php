@@ -9,3 +9,9 @@
 
 		require_once( 'post-type/events.php' );
 	}
+	
+	// BuddyPress Functions
+	include( 'includes/buddypress.php' );
+
+	// Load our shortcodes
+	include( 'includes/shortcodes.php' );

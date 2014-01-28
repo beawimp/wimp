@@ -20,13 +20,13 @@
 		padding-right:0 !important;
 		.make-md-column(8);
 		.make-lg-column(8);
-		input[type="text"] {
+		input[type="text"], input[type="password"] {
 			width:43%;
 			height:33px;
 			font-size:@header-font-size;
 			padding:@header-padding;
 		}
-		button.btn {
+		input.btn {
 			font-size:@header-font-size;
 			padding:@header-padding;
 			background:#d48309;
@@ -36,8 +36,14 @@
 			height:33px;
 			.border-radius(0)
 		}
+		.logged-in {
+			font-size:16px;
+			position:relative;
+			top:2px;
+		}
 	}
 	.login-forms {
+		margin-bottom:0;
 		.make-xs-column(12);
 		.make-sm-column(8);
 		.make-md-column(8);
@@ -169,6 +175,10 @@ body.admin-bar .top-header-wrapper {
 			button.btn {
 				height:42px;
 			}
+			.logged-in {
+				top:0;
+				padding:11px 0;
+			}
 		}
 		.login-meta {
 			top:0;
@@ -235,6 +245,18 @@ body.admin-bar .top-header-wrapper {
 			}
 			input[type="text"] {
 				width:38%;
+			}
+			.logged-in {
+				top:0;
+				padding:0;
+				text-align:center;
+				font-size:15px;
+				span {
+					display:none;
+				}
+				span.name, span.signout {
+					display:block;
+				}
 			}
 		}
 		.login-meta {
