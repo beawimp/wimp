@@ -6348,7 +6348,8 @@ img {
 .btn.btn-primary,
 .btn.btn-primary a,
 input[type="submit"],
-div.generic-button a {
+div.generic-button a,
+.button {
   font-size: 13px !important;
   padding: 5px !important;
   background: #d48309 !important;
@@ -6362,7 +6363,8 @@ div.generic-button a {
 .btn.btn-primary:hover,
 .btn.btn-primary a:hover,
 input[type="submit"]:hover,
-div.generic-button a:hover {
+div.generic-button a:hover,
+.button:hover {
   text-decoration: none;
 }
 .edit-link {
@@ -6382,6 +6384,12 @@ div.generic-button a:hover {
 .edit-link a:hover {
   text-decoration: none;
   opacity: 1;
+}
+code {
+  white-space: normal;
+}
+.radio {
+  list-style: none;
 }
 .top-header-wrapper {
   position: fixed;
@@ -6622,7 +6630,7 @@ body.admin-bar .top-header-wrapper {
   float: none;
 }
 .main-header .navbar-nav > li {
-  padding: 0 18px 10px 0;
+  padding: 0 17px 10px 0;
 }
 .main-header .navbar-nav > li.last {
   padding-right: 0;
@@ -7083,6 +7091,12 @@ body.admin-bar .top-header-wrapper {
     margin-bottom: 10px;
   }
 }
+.groups .entry-title .bp-title-button {
+  font-size: 16px;
+  margin: 0;
+  position: relative;
+  top: -5px;
+}
 #buddypress div.dir-search input[type="text"] {
   padding: 5px;
   font-weight: normal;
@@ -7159,6 +7173,68 @@ body.admin-bar .top-header-wrapper {
   text-decoration: none;
   border: none;
 }
+.blog .content-area,
+.single .content-area {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .blog .content-area,
+  .single .content-area {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 992px) {
+  .blog .content-area,
+  .single .content-area {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  .blog .content-area,
+  .single .content-area {
+    float: left;
+    width: 75%;
+  }
+}
+.blog .sidebar,
+.single .sidebar {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .blog .sidebar,
+  .single .sidebar {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  .blog .sidebar,
+  .single .sidebar {
+    float: left;
+    width: 25%;
+  }
+}
+.blog article.post,
+.single article.post {
+  margin-bottom: 30px;
+}
+.blog .blog-header {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #3395ef;
+}
+.single .entry-title {
+  margin: 20px 0 16px;
+}
 .sidebar {
   background: #E4EDF0;
 }
@@ -7199,6 +7275,54 @@ body.admin-bar .top-header-wrapper {
   .sidebar h3 {
     font-size: 25.19px;
   }
+}
+#comment {
+  width: 100%;
+}
+.comment-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.comment-list .even,
+.comment-list .odd {
+  border: 1px solid #E5EDF1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  position: relative;
+}
+.comment-list .even {
+  background: #f6f8fa;
+}
+.comment-list .odd {
+  background: rgba(246, 248, 250, 0.3);
+}
+.comment-list .comment .comment-metadata {
+  position: absolute;
+  top: 3px;
+  right: -1px;
+}
+.comment-list .comment .comment-metadata > a {
+  background: #fff;
+  border-left: 1px solid #E5EDF1;
+  border-bottom: 1px solid #E5EDF1;
+  padding: 5px 10px;
+  border-bottom-left-radius: 3px;
+}
+.comment-list .comment .comment-content {
+  margin-top: 10px;
+}
+.comment-list .comment .edit-link {
+  top: 32px;
+  right: 10px;
+}
+.comment-list .comment .reply {
+  text-align: right;
+}
+.comment-list .comment .children {
+  margin-top: 10px;
+  list-style: none;
 }
 .main-footer {
   clear: both;

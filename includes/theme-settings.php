@@ -65,6 +65,13 @@
 				'primary' => __( 'Primary Menu', 'wimp' ),
 				'footer'  => __( 'Footer Menu', 'wimp' ),
 			) );
+
+			/**
+			 * Remove the admin tool bar for all but admins
+			 */
+			if ( ! current_user_can( 'activate_plugins' ) && ! is_admin() ) {
+				show_admin_bar( false );
+			}
 		}
 	endif; // wimp_setup
 	add_action( 'after_setup_theme', 'wimp_setup' );
@@ -113,11 +120,11 @@
 		if ( ! $user_ID ) : ?>
 			<div class="logins">
 				<div class="row-fluid">
-					<form method="post" action="<?php echo esc_url( home_url( '/wp-login.php' ) ); ?>" class="login-forms form-inline">
-						<input type="text" name="log" id="user_login" placeholder="username" tabindex="1" value="<?php echo esc_attr( stripslashes( $user_login ) ); ?>">
-						<input type="password" name="pwd" id="user_pass" placeholder="password" tabindex="2">
-						<input type="submit" name="user-submit" value="Log In" class="btn btn-default" tabindex="3">
-						<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
+					<form method="post" action="<?php echo esc_url( home_url( '/wp-login.php?wpe-login=wimp' ) ); ?>" class="login-forms form-inline" name="loginform">
+						<input type="text" name="log" id="user_login" placeholder="username" tabindex="11" value="<?php echo esc_attr( stripslashes( $user_login ) ); ?>">
+						<input type="password" name="pwd" id="user_pass" placeholder="password" tabindex="12">
+						<input type="submit" name="wp-submit" value="Log In" class="btn btn-default" tabindex="13">
+						<input type="hidden" name="redirect_to" value="<?php echo esc_url( home_url() ); ?>" />
 						<input type="hidden" name="user-cookie" value="1" />
 					</form>
 					<div class="login-meta">
@@ -133,7 +140,7 @@
 			</div>
 		<?php endif;
 	}
-	
+
 
 	/**
 	 * Custom template tags for this theme.

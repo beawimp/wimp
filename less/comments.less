@@ -1,0 +1,49 @@
+#comment {
+	width:100%;
+}
+.comment-list {
+	list-style:none;
+	margin:0;
+	padding:0;
+	.even, .odd {
+		border:1px solid #E5EDF1;
+		padding:10px;
+		margin-bottom:10px;
+		border-radius:3px;
+		position:relative;
+	}
+	.even {
+		background:lighten( #E5EDF1, 5% );
+	}
+	.odd {
+		background:rgba(246, 248, 250, 0.3);
+	}
+	.comment {
+		.comment-metadata {
+			position:absolute;
+			top:3px;
+			right:-1px;
+			> a {
+				background:#fff;
+				border-left:1px solid #E5EDF1;
+				border-bottom:1px solid #E5EDF1;
+				padding:5px 10px;
+				border-bottom-left-radius:3px;
+			}
+		}
+		.comment-content {
+			margin-top:10px;
+		}
+		.edit-link {
+			top:32px;
+			right:10px;
+		}
+		.reply {
+			text-align:right;
+		}
+		.children {
+			margin-top:10px;
+			list-style:none;
+		}
+	}
+}

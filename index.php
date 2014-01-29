@@ -15,6 +15,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
+		<h1 class="blog-header">WIMP Blog</h1>
 
 		<?php if ( have_posts() ) : ?>
 

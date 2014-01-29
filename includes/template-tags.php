@@ -31,7 +31,7 @@
 
 			?>
 			<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-				<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'wimp' ); ?></h1>
+				<h1 class="sr-only"><?php _e( 'Post navigation', 'wimp' ); ?></h1>
 
 			<?php if ( is_single() ) : // navigation links for single posts ?>
 

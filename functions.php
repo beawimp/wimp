@@ -11,7 +11,7 @@
 	}
 	
 	// BuddyPress Functions
-	include( 'includes/buddypress.php' );
+	// include( 'includes/buddypress.php' );
 
 	// Load our shortcodes
 	include( 'includes/shortcodes.php' );
