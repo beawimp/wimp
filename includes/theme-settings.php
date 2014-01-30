@@ -85,7 +85,7 @@
 	 * @since 0.1.20140120
 	 */
 	function wimp_theme_resources() {
-		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Quicksand:300,400,700' );
+		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Duru+Sans|Quicksand:400,700' );
 		wp_enqueue_style( 'wimp-styles', get_stylesheet_directory_uri() . '/css/app.min.css', null, THEME_VERSION );
 
 		wp_deregister_script( 'jquery' );

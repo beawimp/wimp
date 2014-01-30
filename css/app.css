@@ -6273,8 +6273,8 @@ td.visible-print {
 }
 body {
   padding: 32px 0 0;
+  font-family: 'Duru Sans', sans-serif;
 }
-body,
 h1,
 h2,
 h3,
@@ -6403,7 +6403,7 @@ code {
   z-index: 99999;
 }
 .top-header-wrapper .slogan {
-  padding: 3px 0;
+  padding: 9px 0;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6445,7 +6445,7 @@ code {
 }
 .top-header-wrapper .logins input[type="text"],
 .top-header-wrapper .logins input[type="password"] {
-  width: 43%;
+  width: 42%;
   height: 33px;
   font-size: 13px;
   padding: 2px 5px;
@@ -6489,7 +6489,7 @@ code {
 @media (min-width: 1200px) {
   .top-header-wrapper .login-forms {
     float: left;
-    width: 66.66666666666666%;
+    width: 58.333333333333336%;
   }
 }
 .top-header-wrapper .login-meta {
@@ -6518,7 +6518,7 @@ code {
 @media (min-width: 1200px) {
   .top-header-wrapper .login-meta {
     float: left;
-    width: 25%;
+    width: 33.33333333333333%;
   }
 }
 .top-header-wrapper p {
@@ -6692,7 +6692,6 @@ body.admin-bar .top-header-wrapper {
   }
   .top-header-wrapper .logins input[type="text"] {
     width: 41%;
-    height: 42px;
   }
   .top-header-wrapper .logins button.btn {
     height: 42px;
@@ -7075,7 +7074,8 @@ body.admin-bar .top-header-wrapper {
   background: transparent;
   color: #000;
   display: block;
-  width: 11%;
+  width: 100%;
+  font-size: 13px;
   text-align: right;
   border: none;
 }
@@ -7084,6 +7084,9 @@ body.admin-bar .top-header-wrapper {
 }
 #buddypress div.activity-comments li:not(:last-child) {
   border-bottom: 1px solid #eee;
+}
+#buddypress .notifications .title {
+  font-size: 16px;
 }
 @media (max-width: 767px) {
   #bootstrap div.activity-meta a {
@@ -7096,6 +7099,10 @@ body.admin-bar .top-header-wrapper {
   margin: 0;
   position: relative;
   top: -5px;
+}
+.groups .invite-list ul {
+  margin: 0;
+  padding: 5px;
 }
 #buddypress div.dir-search input[type="text"] {
   padding: 5px;
@@ -7159,6 +7166,10 @@ body.admin-bar .top-header-wrapper {
 }
 #buddypress table.notification-settings {
   width: 100%;
+}
+#buddypress div.pagination .pagination-links span,
+#buddypress div.pagination .pagination-links a {
+  font-size: 100%;
 }
 .entry-title {
   margin-top: 0;
