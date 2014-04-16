@@ -20,15 +20,15 @@ get_currentuserinfo();
 		<h3 class="title"><a href="<?php echo esc_url( home_url( '/job-board/' ) ); ?>">Find A Wimp</a></h3>
 		<p>Hire a specialist in:</p>
 		<ul>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/' ) ); ?>">Design</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/' ) ); ?>">Programming</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/' ) ); ?>">Marketing/Social Media</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/' ) ); ?>">SEO</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/' ) ); ?>">WordPress</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/' ) ); ?>">Other</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/job-board/category/business-management/' ) ); ?>">Business/Management</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/job-board/category/design/' ) ); ?>">Design</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/job-board/category/education/' ) ); ?>">Education</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/job-board/category/programing/' ) ); ?>">Programing</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/job-board/category/sales-business-dev/' ) ); ?>">Sales/Business Dev</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/job-board/category/other/' ) ); ?>">Other</a></li>
 		</ul>
 	</aside>
-	
+
 	<?php if ( ! $user_ID ) : ?>
 		<aside class="meetup widget last">
 			<h3 class="title"><a href="<?php echo esc_url( home_url( '/members/sign-up/' ) ); ?>">Be A Wimp</a></h3>

@@ -6338,6 +6338,11 @@ h2.title {
   float: left !important;
   margin-right: 20px;
 }
+.aligncenter {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 .nav li {
   float: left !important;
 }
@@ -6350,22 +6355,48 @@ img {
 input[type="submit"],
 div.generic-button a,
 .button {
-  font-size: 13px !important;
-  padding: 5px !important;
-  background: #d48309 !important;
-  border: none !important;
+  font-size: 14.52px;
+  font-family: 'Lustria', serif;
   color: #fff !important;
-  text-transform: uppercase;
-  transition: background-color 0.2s;
-  -webkit-transition: background-color 0.2s;
-  border-radius: 0;
+  text-shadow: 0 1px 1px rgba(20, 20, 21, 0.75);
+  background: #d48309 !important;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d48309 0%, #e49826 100%) !important;
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d48309), color-stop(100%, #e49826)) !important;
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #d48309 0%, #e49826 100%) !important;
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #d48309 0%, #e49826 100%) !important;
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #d48309 0%, #e49826 100%) !important;
+  /* IE10+ */
+  background: linear-gradient(to bottom, #d48309 0%, #e49826 100%) !important;
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d48309', endColorstr='#e49826', GradientType=0) !important;
+  /* IE6-9 */
+  box-shadow: 0 1px 2px rgba(20, 20, 21, 0.75);
+  border: none !important;
+  border-radius: 4px;
 }
-.btn.btn-primary:hover,
-.btn.btn-primary a:hover,
-input[type="submit"]:hover,
-div.generic-button a:hover,
-.button:hover {
-  text-decoration: none;
+.box-square a {
+  text-align: center;
+  background: #e4edf0;
+  margin: 10px 15px;
+  padding: 5px;
+  width: 262px;
+  float: left;
+  color: #1e1e1e;
+}
+.box-square a:hover {
+  text-decoration: underline;
+  background: #d0d8db;
+}
+.box-square.last {
+  margin-right: 0;
+}
+.grid-squares {
+  margin-bottom: 40px;
 }
 .edit-link {
   position: absolute;
@@ -6390,6 +6421,16 @@ code {
 }
 .radio {
   list-style: none;
+}
+#wpjb-widget-alerts-2 .wpjb-widget-smart-alert {
+  border: none;
+}
+#wpjb-widget-alerts-2 .wpjb-widget-smart-alert strong {
+  color: #0a477f;
+  font-size: 32.33px;
+  font-weight: 400;
+  margin: 20px 0 16px;
+  font-family: 'Quicksand', sans-serif;
 }
 .top-header-wrapper {
   position: fixed;
@@ -6630,7 +6671,7 @@ body.admin-bar .top-header-wrapper {
   float: none;
 }
 .main-header .navbar-nav > li {
-  padding: 0 17px 10px 0;
+  padding: 0 16px 10px 0;
 }
 .main-header .navbar-nav > li.last {
   padding-right: 0;
@@ -7246,6 +7287,26 @@ body.admin-bar .top-header-wrapper {
 .single .entry-title {
   margin: 20px 0 16px;
 }
+.jb-banner {
+  background: #115ba0;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 40px;
+}
+.jb-banner a {
+  padding: 10px;
+  margin: 0 20px;
+  color: #fff;
+}
+.wpjb-featured {
+  background-color: rgba(66, 139, 202, 0.25) !important;
+}
+#wpjb-main .wpjb-table tbody tr td {
+  border-color: #428bca !important;
+}
+#wpjb-main .wpjb-table tbody {
+  border-top: 1px solid #428bca !important;
+}
 .sidebar {
   background: #E4EDF0;
 }
@@ -7281,6 +7342,10 @@ body.admin-bar .top-header-wrapper {
 }
 .meetup {
   background: url('../images/meetup.png') right top no-repeat;
+}
+.widget_bp_groups_widget #groups-list {
+  padding-left: 5px;
+  list-style: none;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .sidebar h3 {

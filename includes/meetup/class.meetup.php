@@ -72,8 +72,8 @@ class WIMP_Meetup {
 	 *
 	 * Pass in your Meetup API key through the class - $meetup = new WIMP_Meetup( array( 'key' => 'YOUR_API_KEY' ) );
 	 * If you do not pass it, we'll assume the API key is set in the database.
-	 * 
-	 * @param array $api_key The API key for your Meetup account. If not passed we'll pull from the database. 
+	 *
+	 * @param array $api_key The API key for your Meetup account. If not passed we'll pull from the database.
 	 *
 	 * @version  0.1
 	 * @since    0.1.20140120
@@ -90,11 +90,11 @@ class WIMP_Meetup {
 		// Process the default settings here
 		$this->defaults = wp_parse_args( $api_key, $this->defaults );
 	}
-	
+
 
 	/**
 	 * Request information on a group or groups
-	 * 
+	 *
 	 * @param  array  $parameters Pass an array of options. Refer to the docs for more info - http://www.meetup.com/meetup_api/docs/2/groups/
 	 * @return object
 	 *
@@ -108,7 +108,7 @@ class WIMP_Meetup {
 
 	/**
 	 * Request all events for a group or groups
-	 * 
+	 *
 	 * @param  array  $parameters Pass an array of options. Refer to the docs for more info - http://www.meetup.com/meetup_api/docs/2/events/
 	 * @return object
 	 *
@@ -118,12 +118,12 @@ class WIMP_Meetup {
 	public function get_events( $parameters = array(), $cache_key = '' ) {
 		return $this->fetch( '/2/events', $parameters, '-events-' . $cache_key );
 	}
-	
-	
+
+
 	/**
 	 * The GET operator
 	 * This method will run the queries on the Meetup API and return any data if it exists.
-	 * 
+	 *
 	 * @param  string REQUIRED $path        Should be hardcoded from the request methods.
 	 * @param  array  		   $parameters  The array of parameters to pass to the Meetup API method
 	 * @return Object
@@ -133,7 +133,7 @@ class WIMP_Meetup {
 	 */
 	public function fetch( $path, $parameters = array(), $cache_key ) {
 		$parameters = wp_parse_args( $parameters, $this->defaults );
-		
+
 		// First we'll check that the path being sent is valid.
 		if ( preg_match_all( '/:([a-z]+)/', $path, $matches ) ) {
 			foreach ( $matches[0] as $i => $match ) {
@@ -150,6 +150,8 @@ class WIMP_Meetup {
 		// Put together our URL for the API request
 		$url = $this->base_url . $path . '?' . http_build_query( $parameters );
 
+		$this->purge_cache( sanitize_title_with_dashes( $cache_key ) );
+
 		// Check if our cache already exists
 		if ( ( $data = get_transient( 'meetup-' . sanitize_title_with_dashes( $cache_key ) ) ) === false ) {
 
@@ -157,7 +159,7 @@ class WIMP_Meetup {
 			$data = wp_remote_get( esc_url_raw( $url ) );
 
 			// Spit out the error if something went wrong.
-			if ( is_wp_error( $data ) ) 
+			if ( is_wp_error( $data ) )
 				return 'ERROR: ' . esc_html( $data->get_error_message() );
 
 			// Check if Meetup reported an error
@@ -201,6 +203,14 @@ class WIMP_Meetup {
 		}
 
 		return $parameters;
+	}
+
+
+	public function purge_cache( $cache_key ) {
+		// Check that the cache actually exists first....
+		if ( ( $cache = get_transient( 'meetup-' . sanitize_title_with_dashes( $cache_key ) ) ) === true ) {
+			var_dump( $cache );
+		}
 	}
 }
 

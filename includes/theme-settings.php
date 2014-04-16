@@ -52,7 +52,7 @@
 			/**
 			 * Adding some custom post image sizes :)
 			 */
-			if ( function_exists( 'add_image_size' ) ) { 
+			if ( function_exists( 'add_image_size' ) ) {
 				add_image_size( 'featured-post', 408, 305, true );
 				add_image_size( 'secondary-post', 408, 248, true );
 			}
@@ -85,7 +85,7 @@
 	 * @since 0.1.20140120
 	 */
 	function wimp_theme_resources() {
-		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Duru+Sans|Quicksand:400,700' );
+		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Lustria|Duru+Sans|Quicksand:300,400,700' );
 		wp_enqueue_style( 'wimp-styles', get_stylesheet_directory_uri() . '/css/app.min.css', null, THEME_VERSION );
 
 		wp_deregister_script( 'jquery' );
@@ -101,13 +101,26 @@
 	 * Register widgetized area and update sidebar with default widgets
 	 */
 	function wimp_widgets_init() {
+		// Main Sidebar
 		register_sidebar( array(
 			'name'          => __( 'Sidebar', 'wimp' ),
 			'id'            => 'sidebar-1',
+			'description' 	=> 'Default Sidebar',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
 			'after_title'   => '</h1>',
+		) );
+
+		// Job Board
+		register_sidebar( array(
+		    'name'          => 'Job Board',
+			'id'            => 'job-board',
+			'description'   => 'This sidebar is used on only the Job Board pages.',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>'
 		) );
 	}
 	add_action( 'widgets_init', 'wimp_widgets_init' );

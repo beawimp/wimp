@@ -134,6 +134,11 @@ p, li {
 	.pull-left();
 	margin-right:20px;
 }
+.aligncenter {
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
 
 .nav {
 	li {
@@ -147,18 +152,42 @@ img {
 }
 
 .btn.btn-primary, .btn.btn-primary a, input[type="submit"], div.generic-button a, .button {
-	font-size:@header-font-size !important;
-	padding:5px !important;
-	background:#d48309 !important;
-	border:none !important;
+	font-size:14.52px;//20.52px;
+	font-family:@lustria;
 	color:#fff !important;
-	text-transform:uppercase;
-	transition:background-color .2s;
-	-webkit-transition:background-color .2s;
-	.border-radius(0);
-	&:hover {
-		text-decoration:none;
+	text-shadow:0 1px 1px rgba( 20, 20, 21, .75 );
+	background:#d48309 !important; /* Old browsers */
+	background:-moz-linear-gradient(top,  #d48309 0%, #e49826 100%) !important; /* FF3.6+ */
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#d48309), color-stop(100%,#e49826)) !important; /* Chrome,Safari4+ */
+	background:-webkit-linear-gradient(top,  #d48309 0%,#e49826 100%) !important; /* Chrome10+,Safari5.1+ */
+	background:-o-linear-gradient(top,  #d48309 0%,#e49826 100%) !important; /* Opera 11.10+ */
+	background:-ms-linear-gradient(top,  #d48309 0%,#e49826 100%) !important; /* IE10+ */
+	background:linear-gradient(to bottom,  #d48309 0%,#e49826 100%) !important; /* W3C */
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#d48309', endColorstr='#e49826',GradientType=0 ) !important; /* IE6-9 */
+	box-shadow:0 1px 2px rgba( 20, 20, 21, .75 );
+	border:none !important;
+	border-radius:4px;
+}
+.box-square {
+	a {
+		text-align:center;
+		background:#e4edf0;
+		margin:10px 15px;
+		padding:5px;
+		width:262px;
+		float:left;
+		color:#1e1e1e;
+		&:hover {
+			text-decoration:underline;
+			background:#d0d8db;
+		}
 	}
+	&.last {
+		margin-right:0;
+	}
+}
+.grid-squares {
+	margin-bottom:40px;
 }
 
 .edit-link {
@@ -186,4 +215,16 @@ code {
 
 .radio {
 	list-style:none;
+}
+
+// Override the crap WP Job Board creates
+#wpjb-widget-alerts-2 .wpjb-widget-smart-alert {
+	border:none;
+	strong {
+		color:#0a477f;
+		font-size:32.33px;
+		font-weight:400;
+		margin:20px 0 16px;
+		font-family:@quicksand;
+	}
 }

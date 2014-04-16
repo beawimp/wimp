@@ -18,14 +18,22 @@ if ( class_exists( 'WIMP_Meetup' ) ) {
 			'status' => $status,
 		);
 		$events = wimp_get_events( $options, $limit );
-
 		if ( ! empty( $events ) ) {
 			foreach ( $events as $event ) {
+				$event_time = str_replace( '.', '', $event->time );
+				if ( strlen( $event->description ) > 225 ) {
+					$description = wordwrap( $event->description, 800 );
+					$description = substr( $description, 0, strpos( $description, "\n" ) ) . '...';
+				} else {
+					$description = $event->description;
+				}
 				$output = '<article class="featured-meetup">
 					<header class="meetup-header">
 						<h2 class="title">Next Featured Meetup</h2>
 						<h3 class="subtitle"><a href="' . esc_url( $event->event_url ) . '" target="_blank">' . esc_html( $event->name ) . '</a></h3>
-						<p class="meetup-meta">' . date( 'l, F jS, Y', substr( $event->time, 0, -3 ) ) . ' | ' . date( 'g:i A', substr( $event->time, 0, -3 ) ) . ' | <a href="' . esc_url( $event->event_url ) . '">RSVPS: ' . intval( $event->yes_rsvp_count ) . '</a></p>
+						<p class="meetup-meta">' . date( 'l, F jS, Y', str_replace( 'E+12', '00', $event_time ) ) . ' | ' . date( 'g:i A', str_replace( 'E+12', '00', $event_time ) ) . ' | <a href="' . esc_url( $event->event_url ) . '">RSVPS: ' . intval( $event->yes_rsvp_count ) . '</a></p>
+						' . str_replace( '<br />', '', wp_kses_post( $description ) ) . '
+						<p class="read-more"><a href="' . esc_url( $event->event_url ) . '" target="_blank">Learn more about this event &raquo;</a></p>
 					</header>
 				</article>';
 			}
