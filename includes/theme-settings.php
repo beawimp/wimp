@@ -85,14 +85,16 @@
 	 * @since 0.2
 	 */
 	function wimp_theme_resources() {
-		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Lustria|Duru+Sans|Quicksand:300,400,700' );
-		wp_enqueue_style( 'wimp-styles', get_stylesheet_directory_uri() . '/css/app.min.css', null, THEME_VERSION );
+		// Load only on the front-end
+		if ( ! is_admin() ) {
+			wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Lustria|Duru+Sans|Quicksand:300,400,700' );
+			wp_enqueue_style( 'wimp-styles', get_stylesheet_directory_uri() . '/css/app.min.css', null, THEME_VERSION );
 
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, THEME_VERSION );
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'wimp-scripts', get_stylesheet_directory_uri() . '/js/build/app.min.js', array( 'jquery' ), THEME_VERSION, false );
-
+			wp_deregister_script( 'jquery' );
+			wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, THEME_VERSION );
+			wp_enqueue_script( 'jquery' );
+			wp_enqueue_script( 'wimp-scripts', get_stylesheet_directory_uri() . '/js/build/app.min.js', array( 'jquery' ), THEME_VERSION, false );
+		}
 	}
 	add_action( 'wp_enqueue_scripts', 'wimp_theme_resources' );
 
@@ -126,35 +128,6 @@
 	add_action( 'widgets_init', 'wimp_widgets_init' );
 
 
-	function wimp_login_forms() {
-		global $current_user, $user_ID, $user_identity;
-		get_currentuserinfo();
-
-		if ( ! $user_ID ) : ?>
-			<div class="logins">
-				<div class="row-fluid">
-					<form method="post" action="<?php echo esc_url( home_url( '/wp-login.php?wpe-login=wimp' ) ); ?>" class="login-forms form-inline" name="loginform">
-						<input type="text" name="log" id="user_login" placeholder="username" tabindex="11" value="<?php echo esc_attr( stripslashes( $user_login ) ); ?>">
-						<input type="password" name="pwd" id="user_pass" placeholder="password" tabindex="12">
-						<input type="submit" name="wp-submit" value="Log In" class="btn btn-default" tabindex="13">
-						<input type="hidden" name="redirect_to" value="<?php echo esc_url( home_url() ); ?>" />
-						<input type="hidden" name="user-cookie" value="1" />
-					</form>
-					<div class="login-meta">
-						<a href="<?php echo esc_url( home_url( '/wp-login.php?action=lostpassword' ) ); ?>">Forgot Password</a> <span>|</span> <a href="<?php echo esc_url( home_url( '/members/sign-up/' ) ); ?>">Be a WIMP</a>
-					</div>
-				</div>
-			</div>
-		<?php else : ?>
-			<div class="logins text-right">
-				<div class="row-fluid">
-					<p class="logged-in"><span class="name">Welcome, <a href="<?php echo bp_loggedin_user_domain(); ?>"><?php echo esc_html( $current_user->display_name ); ?></a>! <a href="<?php echo bp_loggedin_user_domain(); ?>"><?php echo bp_core_fetch_avatar( array( 'item_id' => $current_user->ID, 'type' => 'thumb', 'width' => 26, 'height' => 26 ) ); ?></a></span> <span>&nbsp;|&nbsp;</span> <span class="signout"><a href="<?php echo esc_url( wp_logout_url( home_url() ) ); ?>" class="signout">sign out</a></span></p>
-				</div>
-			</div>
-		<?php endif;
-	}
-
-
 	/**
 	 * Custom template tags for this theme.
 	 */
@@ -169,6 +142,7 @@
 
 	/**
 	 * Load Jetpack compatibility file.
+	 * Disable for now until we are ready for Infinite Scroll.
 	 */
-	require get_template_directory() . '/includes/jetpack.php';
+	// require get_template_directory() . '/includes/jetpack.php';
 

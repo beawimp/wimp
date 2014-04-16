@@ -12,6 +12,7 @@
 	 */
 	function wimp_page_menu_args( $args ) {
 		$args['show_home'] = true;
+
 		return $args;
 	}
 	add_filter( 'wp_page_menu_args', 'wimp_page_menu_args' );
@@ -22,9 +23,8 @@
 	 */
 	function wimp_body_classes( $classes ) {
 		// Adds a class of group-blog to blogs with more than 1 published author
-		if ( is_multi_author() ) {
+		if ( is_multi_author() )
 			$classes[] = 'group-blog';
-		}
 
 		return $classes;
 	}
@@ -35,7 +35,7 @@
 	 * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
 	 */
 	function wimp_enhanced_image_navigation( $url, $id ) {
-		if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
+		if ( ! is_attachment() && ! wp_attachment_is_image( absint( $id ) ) )
 			return $url;
 
 		$image = get_post( $id );

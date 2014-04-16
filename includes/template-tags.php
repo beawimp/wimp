@@ -223,6 +223,39 @@
 
 
 	/**
+	 * Adds the login form!
+	 * @return html
+	 */
+	function wimp_login_forms() {
+		global $current_user, $user_ID, $user_identity;
+		get_currentuserinfo();
+
+		if ( ! $user_ID ) : ?>
+			<div class="logins">
+				<div class="row-fluid">
+					<form method="post" action="<?php echo esc_url( home_url( '/wp-login.php?wpe-login=wimp' ) ); ?>" class="login-forms form-inline" name="loginform">
+						<input type="text" name="log" id="user_login" placeholder="username" tabindex="11" value="<?php echo esc_attr( stripslashes( $user_login ) ); ?>">
+						<input type="password" name="pwd" id="user_pass" placeholder="password" tabindex="12">
+						<input type="submit" name="wp-submit" value="Log In" class="btn btn-default" tabindex="13">
+						<input type="hidden" name="redirect_to" value="<?php echo esc_url( home_url() ); ?>" />
+						<input type="hidden" name="user-cookie" value="1" />
+					</form>
+					<div class="login-meta">
+						<a href="<?php echo esc_url( home_url( '/wp-login.php?action=lostpassword' ) ); ?>">Forgot Password</a> <span>|</span> <a href="<?php echo esc_url( home_url( '/members/sign-up/' ) ); ?>">Be a WIMP</a>
+					</div>
+				</div>
+			</div>
+		<?php else : ?>
+			<div class="logins text-right">
+				<div class="row-fluid">
+					<p class="logged-in"><span class="name">Welcome, <a href="<?php echo bp_loggedin_user_domain(); ?>"><?php echo esc_html( $current_user->display_name ); ?></a>! <a href="<?php echo bp_loggedin_user_domain(); ?>"><?php echo bp_core_fetch_avatar( array( 'item_id' => $current_user->ID, 'type' => 'thumb', 'width' => 26, 'height' => 26 ) ); ?></a></span> <span>&nbsp;|&nbsp;</span> <span class="signout"><a href="<?php echo esc_url( wp_logout_url( home_url() ) ); ?>" class="signout">sign out</a></span></p>
+				</div>
+			</div>
+		<?php endif;
+	}
+
+
+	/**
 	 * Flush out the transients used in wimp_categorized_blog
 	 * @return void
 	 */
@@ -232,7 +265,7 @@
 	}
 	add_action( 'edit_category', 'wimp_category_transient_flusher' );
 	add_action( 'save_post',     'wimp_category_transient_flusher' );
-	
+
 
 	/**
 	 * Extends the word length for the excerpt tool. This is primarily used for the homepage. Adjusting this for another area,

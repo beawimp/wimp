@@ -150,7 +150,7 @@ class WIMP_Meetup {
 		// Put together our URL for the API request
 		$url = $this->base_url . $path . '?' . http_build_query( $parameters );
 
-		$this->purge_cache( sanitize_title_with_dashes( $cache_key ) );
+		// $this->purge_cache( sanitize_title_with_dashes( $cache_key ) );
 
 		// Check if our cache already exists
 		if ( ( $data = get_transient( 'meetup-' . sanitize_title_with_dashes( $cache_key ) ) ) === false ) {
