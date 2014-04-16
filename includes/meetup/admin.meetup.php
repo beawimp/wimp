@@ -4,16 +4,16 @@
  * Sets a custom settings area for adding the Meetup API.
  *
  * @version  0.1
- * @since    0.1.20140120
+ * @since    0.2
  */
-	
+
 /**
  * Adds a new section on to Settings > General
  * This section will allow us to add the fields needed for passing our Meetup API keys and store them in the DB.
  * @return void
  *
  * @version  0.1
- * @since    0.1.20140120
+ * @since    0.2
  */
 function wimp_meetup_init_settings() {
 
@@ -37,7 +37,7 @@ add_action( 'admin_init', 'wimp_meetup_init_settings' );
  * @return string
  *
  * @version  0.1
- * @since    0.1.20140120
+ * @since    0.2
  */
 function wimp_meetup_settings_description() {
 	echo '<p>The place where all the cool kids store their Meetup API key :D</p>';
@@ -51,7 +51,7 @@ function wimp_meetup_settings_description() {
  * @return string
  *
  * @version  0.1
- * @since    0.1.20140120
+ * @since    0.2
  */
 function wimp_meetup_text_field( $args ) {
 	$value = get_option( esc_attr( $args['name'] ) );

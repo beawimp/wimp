@@ -7,7 +7,7 @@
  * At this moment, this is only a GET request. But a full REST implementation will be setup.
  *
  * @version  0.1
- * @since    0.1.20140120
+ * @since    0.2
  */
 
 /**
@@ -28,7 +28,7 @@ class WIMP_Meetup {
 	 * @var string
 	 *
 	 * @version  0.1
-	 * @since    0.1.20140120
+	 * @since    0.2
 	 */
 	protected $base_url = 'https://api.meetup.com';
 
@@ -37,7 +37,7 @@ class WIMP_Meetup {
 	 * Set some default parameters such as enabling a signed API key signature (http://www.meetup.com/meetup_api/auth/#keysign)
 	 * @var array
 	 *
-	 * @since  0.1.20140120
+	 * @since  0.2
 	 */
 	protected $defaults = array(
 		'sign' => 'true',
@@ -76,7 +76,7 @@ class WIMP_Meetup {
 	 * @param array $api_key The API key for your Meetup account. If not passed we'll pull from the database.
 	 *
 	 * @version  0.1
-	 * @since    0.1.20140120
+	 * @since    0.2
 	 */
 	public function __construct( $api_key = array() ) {
 
@@ -99,7 +99,7 @@ class WIMP_Meetup {
 	 * @return object
 	 *
 	 * @version  0.1
-	 * @since    0.1.20140120
+	 * @since    0.2
 	 */
 	public function get_groups( $parameters = array(), $cache_key ) {
 		return $this->fetch( '/2/groups', $parameters, '-groups-' . $cache_key );
@@ -113,7 +113,7 @@ class WIMP_Meetup {
 	 * @return object
 	 *
 	 * @version  0.1
-	 * @since    0.1.20140120
+	 * @since    0.2
 	 */
 	public function get_events( $parameters = array(), $cache_key = '' ) {
 		return $this->fetch( '/2/events', $parameters, '-events-' . $cache_key );
@@ -129,7 +129,7 @@ class WIMP_Meetup {
 	 * @return Object
 	 *
 	 * @version  0.1
-	 * @since    0.1.20140120
+	 * @since    0.2
 	 */
 	public function fetch( $path, $parameters = array(), $cache_key ) {
 		$parameters = wp_parse_args( $parameters, $this->defaults );
@@ -184,7 +184,7 @@ class WIMP_Meetup {
 	 * @return array
 	 *
 	 * @version 0.1
-	 * @since   0.1.20140120
+	 * @since   0.2
 	 */
 	public function sanitize_options( $options ) {
 

@@ -8,11 +8,11 @@
  * @return html
  *
  * @version 0.1
- * @since   0.1.20140120
+ * @since   0.2
  */
 function wimp_list_events( $options, $limit = 0 ) {
 	date_default_timezone_set( 'America/Los_Angeles' );
-	
+
 	// Get the data
 	$events = wimp_get_events( $options, $limit );
 

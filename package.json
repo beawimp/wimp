@@ -1,7 +1,7 @@
 {
   "name": "WIMP",
   "description": "A WordPress Starter theme with Bootstrap 3, Grunt.js and Less",
-  "version": "0.1.20140120",
+  "version": "0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/colegeissinger/wimp"

@@ -17,7 +17,7 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php if ( is_page( 'job-board' ) && isset( $wp->query_vars['pagename'] ) && $wp->query_vars['pagename'] == 'job-board' ) : ?>
-				<a href="http://beawimp.org/job-board/add/" class="btn btn-primary pull-right" style="margin-top:2px;">Post a Job - $25 Limited Time Only</a>
+				<a href="http://beawimp.org/job-board/add/" class="btn btn-primary pull-right" style="margin-top:23px;">Post a Job - $25 Limited Time Only</a>
 				<h1>WIMP Job Board</h1>
 
 				<div class="jb-banner"><a href="http://beawimp.org/job-board/">View Jobs</a> <a href="http://beawimp.org/job-board/add/">Post A Job</a> <a href="http://beawimp.org/job-board/advanced-search/">Advanced Search</a></div>

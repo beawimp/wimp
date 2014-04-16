@@ -10,19 +10,19 @@
  * @param  string $topic         		  Only return groups in the specified topic (one topic allowed)
  * @param  string $zip           		  A valid US zip code, limits the returned groups to those within radius miles
  * @return OBJECT
- *        
+ *
  * @version 0.1
- * @since   0.1.20140120
+ * @since   0.2
  */
 function wimp_get_groups( $group_urlname, $desc = true, $group_id = '', $category_id = '', $member_id = '', $organizer_id = '', $topic = '', $zip = '' ) {
 	global $wimp_meetup;
 
 
 	$parameters['group_urlname'] = sanitize_title_with_dashes( $group_urlname );
-	
+
 	$parameters['desc'] = ( $desc === false ) ? 'false' : 'true';
 
-	if ( ! empty( $group_id ) ) 
+	if ( ! empty( $group_id ) )
 		$parameters['group_id'] = absint( $group_id );
 
 	if ( ! empty( $category_id ) )
@@ -52,7 +52,7 @@ function wimp_get_groups( $group_urlname, $desc = true, $group_id = '', $categor
  * @return Object
  *
  * @version 0.1
- * @since   0.1.20140120
+ * @since   0.2
  */
 function wimp_get_events( $options, $limit = 0 ) {
 	global $wimp_meetup;

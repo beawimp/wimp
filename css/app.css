@@ -7182,6 +7182,9 @@ body.admin-bar .top-header-wrapper {
   font-size: 13px;
   padding: 5px 8px !important;
 }
+#buddypress div.generic-button a {
+  font-size: 1.4rem;
+}
 #buddypress .button-nav {
   display: none;
 }
@@ -7204,6 +7207,9 @@ body.admin-bar .top-header-wrapper {
 }
 #buddypress .button-nav:after {
   clear: both;
+}
+#buddypress div.activity-meta {
+  text-align: right;
 }
 #buddypress table.notification-settings {
   width: 100%;
@@ -7328,8 +7334,21 @@ body.admin-bar .top-header-wrapper {
 .widget .title a {
   color: #4a4a4a;
 }
+.widget.widget_wpjb-widget-alerts input {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: .8em;
+}
+.widget .wpjb-widget-item-count > div.wpjb-widget-item-num {
+  margin-bottom: 5px;
+}
 .widget a {
   color: #d48309;
+}
+.widget ol,
+.widget ul {
+  padding-left: 0;
+  list-style: none;
 }
 .wimp-wiki {
   background: url('../images/wimp-wiki.png') right top no-repeat;

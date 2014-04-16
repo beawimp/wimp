@@ -4,7 +4,7 @@
 	 * wimp functions and definitions
 	 *
 	 * @package wimp
-	 * @since 0.1.20140120
+	 * @since 0.2
 	 */
 
 	/**
@@ -17,7 +17,7 @@
 	/**
 	 * Theme version... yup. Meow.
 	 */
-	define( 'THEME_VERSION', '0.1.20140120' );
+	define( 'THEME_VERSION', '0.2' );
 
 
 	/**
@@ -82,7 +82,7 @@
 	 * @return void
 	 *
 	 * @version 0.1
-	 * @since 0.1.20140120
+	 * @since 0.2
 	 */
 	function wimp_theme_resources() {
 		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Lustria|Duru+Sans|Quicksand:300,400,700' );
