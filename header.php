@@ -38,7 +38,7 @@
 					<aside class="slogan hidden-sm hidden-xs">
 						<p><?php echo bloginfo( 'description' ); ?></p>
 					</aside>
-					<?php echo wimp_login_forms(); ?>
+					<?php echo wimp_login_form(); ?>
 				</div>
 			</div>
 		</section>

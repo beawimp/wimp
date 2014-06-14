@@ -14,7 +14,7 @@
 get_header(); ?>
 	<section class="main-body">
 		<div class="header-image">
-			<a href="igg.me/at/beawimp" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hero-image-igg.jpg" width="846" height="193" style="border:1px solid #ccc;" /></a>
+			<a href="http://igg.me/at/beawimp" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/hero-image-igg.jpg" width="846" height="193" style="border:1px solid #ccc;" /></a>
 		</div>
 		<?php echo do_shortcode( '[meetup]' ); ?>
 		<?php

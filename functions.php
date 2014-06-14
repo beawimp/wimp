@@ -15,3 +15,4 @@ if ( ! class_exists( 'WIMP_Meetup' ) ) {
 
 // Load our shortcodes
 include( 'includes/shortcodes.php' );
+

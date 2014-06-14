@@ -17,15 +17,15 @@ get_currentuserinfo();
 		<p>Ask a person, not a search engine.</p>
 	</aside>
 	<aside class="find-a-wimp widget">
-		<h3 class="title"><a href="<?php echo esc_url( home_url( '/job-board/' ) ); ?>">Find A Wimp</a></h3>
+		<h3 class="title"><a href="<?php echo esc_url( home_url( '/jobs/' ) ); ?>">Find A Wimp</a></h3>
 		<p>Hire a specialist in:</p>
 		<ul>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/category/business-management/' ) ); ?>">Business/Management</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/category/design/' ) ); ?>">Design</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/category/education/' ) ); ?>">Education</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/category/programing/' ) ); ?>">Programing</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/category/sales-business-dev/' ) ); ?>">Sales/Business Dev</a></li>
-			<li><a href="<?php echo esc_url( home_url( '/job-board/category/other/' ) ); ?>">Other</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/jobs/category/business-management/' ) ); ?>">Business/Management</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/jobs/category/design/' ) ); ?>">Design</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/jobs/category/education/' ) ); ?>">Education</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/jobs/category/programing/' ) ); ?>">Programing</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/jobs/category/sales-business-dev/' ) ); ?>">Sales/Business Dev</a></li>
+			<li><a href="<?php echo esc_url( home_url( '/jobs/category/other/' ) ); ?>">Other</a></li>
 		</ul>
 	</aside>
 

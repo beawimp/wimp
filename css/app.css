@@ -6298,6 +6298,9 @@ li {
   font-size: 15px;
   line-height: 20px;
 }
+.entry-content p {
+  margin-bottom: 18px;
+}
 .title,
 h1,
 h2.title {
