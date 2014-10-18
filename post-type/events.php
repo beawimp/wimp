@@ -25,7 +25,7 @@ function wimp_list_events( $options, $limit = 0 ) {
 			<li class="event row <?php echo intval( $event->id ); ?>">
 				<header class="event-header">
 					<h2 class="event-title"><a href="<?php echo esc_url( $event->event_url ); ?>" target="_blank"><?php echo esc_html( $event->name ); ?></a></h2>
-					<h3 class="event-date"><?php echo date( 'l, F jS, Y', str_replace( 'E+12', '00', $event_time ) ); ?> <span class="event-time"><?php echo date( 'g:i A', str_replace( 'E+12', '00', $event_time ) ); ?></span></h3>
+					<h3 class="event-date"><?php echo date( 'l, F jS, Y | g:i A', substr( $event->time / 100, 0, -1 ) ); ?> <span class="event-time"><?php echo date( 'g:i A', str_replace( 'E+12', '00', $event_time ) ); ?></span></h3>
 				</header>
 				<div class="event-content">
 					<?php echo str_replace( '<br />', '', wp_kses_post( $event->description ) ); ?>

@@ -8,19 +8,19 @@ if ( class_exists( 'WIMP_Meetup' ) ) {
 	function wimp_get_meetup( $atts ) {
 		date_default_timezone_set( 'America/Los_Angeles' );
 
-		extract( shortcode_atts( array(
+		$data = shortcode_atts( array(
 			'status' => 'upcoming',
 			'limit' => 1
-		), $atts ) );
+		), $atts );
 
 		$options = array(
 			'group_urlname' => 'beawimp',
-			'status' => $status,
+			'status' => $data['status'],
 		);
-		$events = wimp_get_events( $options, $limit );
-		if ( ! empty( $events ) ) {
+		$events = wimp_get_events( $options, $data['limit'] );
+
+		if ( ! empty( $events ) && is_array( $events ) ) {
 			foreach ( $events as $event ) {
-				$event_time = str_replace( '.', '', $event->time );
 				if ( strlen( $event->description ) > 225 ) {
 					$description = wordwrap( $event->description, 800 );
 					$description = substr( $description, 0, strpos( $description, "\n" ) ) . '...';
@@ -31,7 +31,7 @@ if ( class_exists( 'WIMP_Meetup' ) ) {
 					<header class="meetup-header">
 						<h2 class="title">Next Featured Meetup</h2>
 						<h3 class="subtitle"><a href="' . esc_url( $event->event_url ) . '" target="_blank">' . esc_html( $event->name ) . '</a></h3>
-						<p class="meetup-meta">' . date( 'l, F jS, Y', str_replace( 'E+12', '00', $event_time ) ) . ' | ' . date( 'g:i A', str_replace( 'E+12', '00', $event_time ) ) . ' | <a href="' . esc_url( $event->event_url ) . '">RSVPS: ' . intval( $event->yes_rsvp_count ) . '</a></p>
+						<p class="meetup-meta">' . date( 'l, F jS, Y | g:i A', substr( $event->time / 100, 0, -1 ) ) . ' | <a href="' . esc_url( $event->event_url ) . '">RSVPS: ' . intval( $event->yes_rsvp_count ) . '</a></p>
 						' . str_replace( '<br />', '', wp_kses_post( $description ) ) . '
 						<p class="read-more"><a href="' . esc_url( $event->event_url ) . '" target="_blank">Learn more about this event &raquo;</a></p>
 					</header>
