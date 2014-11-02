@@ -6440,29 +6440,6 @@ code {
   margin: 20px 0 16px;
   font-family: 'Quicksand', sans-serif;
 }
-.main-body article {
-  margin-bottom: 20px;
-}
-.main-body article:before,
-.main-body article:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.main-body article:after {
-  clear: both;
-}
-.main-body article:before,
-.main-body article:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.main-body article:after {
-  clear: both;
-}
 .top-header-wrapper {
   position: fixed;
   top: 0;
@@ -7323,6 +7300,29 @@ body.admin-bar .top-header-wrapper {
 }
 .single .entry-title {
   margin: 20px 0 16px;
+}
+.archive .main-body article {
+  margin-bottom: 20px;
+}
+.archive .main-body article:before,
+.archive .main-body article:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.archive .main-body article:after {
+  clear: both;
+}
+.archive .main-body article:before,
+.archive .main-body article:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.archive .main-body article:after {
+  clear: both;
 }
 .jb-banner {
   background: #115ba0;
