@@ -6440,6 +6440,29 @@ code {
   margin: 20px 0 16px;
   font-family: 'Quicksand', sans-serif;
 }
+.main-body article {
+  margin-bottom: 20px;
+}
+.main-body article:before,
+.main-body article:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.main-body article:after {
+  clear: both;
+}
+.main-body article:before,
+.main-body article:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.main-body article:after {
+  clear: both;
+}
 .top-header-wrapper {
   position: fixed;
   top: 0;
