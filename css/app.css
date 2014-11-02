@@ -6440,6 +6440,99 @@ code {
   margin: 20px 0 16px;
   font-family: 'Quicksand', sans-serif;
 }
+.author.archive .page-header {
+  margin-top: 0;
+}
+#author-block:before,
+#author-block:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+#author-block:after {
+  clear: both;
+}
+#author-block:before,
+#author-block:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+#author-block:after {
+  clear: both;
+}
+.author-name {
+  font-size: 2em;
+  margin: 0;
+}
+.author-title {
+  margin: 2px 0 15px;
+}
+.author-avatar {
+  float: left;
+  width: 17.7304965%;
+  margin-right: 1.7730496%;
+}
+.author-bio {
+  display: block;
+  float: left;
+  width: 80.4964539%;
+}
+.author-social {
+  margin: 0;
+  padding: 0;
+}
+.author-social li {
+  display: inline-block;
+}
+.author-social a {
+  font-size: 1.5em;
+  color: #115ba0;
+}
+.author-social a:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+@font-face {
+  font-family: 'wimp-social';
+  src: url('fonts/wimp-social.eot?-et3lav');
+  src: url('fonts/wimp-social.eot?#iefix-et3lav') format('embedded-opentype'), url('fonts/wimp-social.woff?-et3lav') format('woff'), url('fonts/wimp-social.ttf?-et3lav') format('truetype'), url('fonts/wimp-social.svg?-et3lav#wimp-social') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'wimp-social';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-profile:before {
+  content: "\e605";
+}
+.icon-googleplus:before {
+  content: "\e600";
+}
+.icon-facebook:before {
+  content: "\e601";
+}
+.icon-instagram:before {
+  content: "\e602";
+}
+.icon-twitter:before {
+  content: "\e603";
+}
+.icon-linkedin:before {
+  content: "\e604";
+}
 .top-header-wrapper {
   position: fixed;
   top: 0;

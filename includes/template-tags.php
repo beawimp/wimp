@@ -286,3 +286,71 @@ function wimp_excerpt_new_more_link( $excerpt ) {
 	return str_replace( '[...]', '...', $excerpt );
 }
 add_filter( 'wp_trim_excerpt', 'wimp_excerpt_new_more_link' );
+
+/**
+ * Returns the author meta information including BuddyPress parameters.
+ *
+ * @param null $author_id
+ *
+ * @return array|mixed
+ */
+function wimp_get_author_data( $author_id = null ) {
+	if ( ! isset( $author_id ) || ! is_int( $author_id ) ) {
+		$author_id = get_the_author_meta( 'ID' );
+	}
+
+	$author_id = (int) $author_id;
+
+	// Make sure we returned a proper ID
+	if ( 0 === $author_id ) {
+		return false;
+	}
+
+	// Fetch the default Author Information
+	$author = get_userdata( $author_id );
+
+	// Remove the author login and password
+	unset( $author->data->user_pass );
+	unset( $author->data->user_login );
+
+	// Prefix the BuddyPress specific information
+	$author->data->avatar = bp_core_fetch_avatar( array(
+		'item_id' => $author_id,
+		'type'    => 'full',
+	) );
+	$author->data->title = bp_get_profile_field_data( array(
+		'field' => 'title',
+		'user_id' => $author_id,
+	) );
+	$author->data->company = bp_get_profile_field_data( array(
+		'field' => 'company name',
+		'user_id' => $author_id,
+	) );
+	$author->data->description = bp_get_profile_field_data( array(
+		'field' => 'description',
+		'user_id' => $author_id,
+	) );
+	$author->data->wimp_url = bp_core_get_user_domain( $author_id );
+	$author->data->facebook_url = bp_get_profile_field_data( array(
+		'field' => 'facebook url',
+		'user_id' => $author_id,
+	) );
+	$author->data->twitter_url = bp_get_profile_field_data( array(
+		'field' => 'twitter url',
+		'user_id' => $author_id,
+	) );
+	$author->data->linkedin_url = bp_get_profile_field_data( array(
+		'field' => 'linkedin url',
+		'user_id' => $author_id,
+	) );
+	$author->data->google_url = bp_get_profile_field_data( array(
+		'field' => 'google+ url',
+		'user_id' => $author_id,
+	) );
+	$author->data->instagram_url = bp_get_profile_field_data( array(
+		'field' => 'instagram url',
+		'user_id' => $author_id,
+	) );
+
+	return $author->data;
+}
