@@ -14,8 +14,6 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php get_template_part( 'partials/content', 'author-bio' ); ?>
-
 			<?php wimp_content_nav( 'nav-below' ); ?>
 
 			<?php
