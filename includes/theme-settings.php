@@ -159,7 +159,7 @@ function wimp_add_author_blocks( $content ) {
 
 	return $content;
 }
-add_filter( 'the_content', 'wimp_add_author_blocks', 100 );
+add_filter( 'the_content', 'wimp_add_author_blocks', 10 );
 
 
 /**
