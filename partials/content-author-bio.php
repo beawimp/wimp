@@ -10,7 +10,7 @@ $author = wimp_get_author_data();
 	<h3 class="author-name"><?php echo esc_html( $author->display_name ); ?></h3>
 
 	<?php if ( ! empty( $author->title ) || ! empty( $author->company ) ) : ?>
-		<h4 class="author-title"><?php echo esc_html( wimp_get_author_title() ); ?></h4>
+		<h4 class="author-title"><?php echo esc_html( wimp_get_author_title( $author ) ); ?></h4>
 	<?php endif; ?>
 
 	<figure class="author-avatar">

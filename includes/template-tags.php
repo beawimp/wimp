@@ -354,3 +354,25 @@ function wimp_get_author_data( $author_id = null ) {
 
 	return $author->data;
 }
+
+/**
+ * Produces the right title for the author blocks.
+ * Checks if the author has a title and/or company set.
+ *
+ * @see   wimp_get_author_data()
+ *
+ * @param object $author The author object
+ *
+ * @return string
+ */
+function wimp_get_author_title( $author ) {
+	if ( ! empty( $author->title ) && ! empty( $author->company ) ) {
+		return $author->title . ' at ' . $author->company;
+	} elseif ( ! empty( $author->title ) && empty( $author->company ) ) {
+		return $author->title;
+	} elseif ( empty( $author->title ) && ! empty( $author->company ) ) {
+		return $author->company;
+	}
+
+	return '';
+}
