@@ -127,10 +127,37 @@ function wimp_widgets_init() {
 }
 add_action( 'widgets_init', 'wimp_widgets_init' );
 
+/**
+ * Allows us to process a template part into a variable.
+ * This is useful if you need to filter a template part into the content or a variable
+ *
+ * @param string $template_name The template naem
+ * @param string $part_name     The template part name
+ *
+ * @return string
+ */
+function wimp_load_template_part( $template_name, $part_name = null ) {
+	ob_start();
+	get_template_part( $template_name, $part_name );
+	$template = ob_get_contents();
+	ob_end_clean();
+
+	return $template;
+}
+
+/**
+ * Filter the author blocks onto singular posts
+ *
+ * @param string $content The content being loaded into the_content
+ *
+ * @return string
+ */
 function wimp_add_author_blocks( $content ) {
 	if ( is_single() ) {
-		get_template_part( 'partials/content', 'author-bio' );
+		$content .= wimp_load_template_part( 'partials/content', 'author-bio' );
 	}
+
+	return $content;
 }
 add_filter( 'the_content', 'wimp_add_author_blocks', 100 );
 
