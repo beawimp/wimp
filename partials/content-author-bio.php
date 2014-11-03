@@ -17,7 +17,7 @@ $author = wimp_get_author_data();
 		<?php echo wp_kses_post( $author->avatar ); ?>
 	</figure>
 	<aside class="author-bio">
-		<?php echo ( ! empty( $author->description ) ) ? wpautop( esc_html( $author->description ) ) : '<p>No bio set!</p>'; ?>
+		<?php echo ( ! empty( $author->description ) ) ? wpautop( wp_kses_post( $author->description ) ) : '<p>No bio set!</p>'; ?>
 
 		<ul class="author-social">
 			<li>
