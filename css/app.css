@@ -6443,6 +6443,11 @@ code {
 .author.archive .page-header {
   margin-top: 0;
 }
+.single #author-block {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
 #author-block:before,
 #author-block:after {
   content: " ";

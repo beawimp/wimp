@@ -127,6 +127,13 @@ function wimp_widgets_init() {
 }
 add_action( 'widgets_init', 'wimp_widgets_init' );
 
+function wimp_add_author_blocks( $content ) {
+	if ( is_single() ) {
+		get_template_part( 'partials/content', 'author-bio' );
+	}
+}
+add_filter( 'the_content', 'wimp_add_author_blocks', 100 );
+
 
 /**
  * Custom template tags for this theme.
