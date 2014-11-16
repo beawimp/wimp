@@ -22,7 +22,18 @@ if ( class_exists( 'WIMP_Meetup' ) ) {
 		if ( ! empty( $events ) && is_array( $events ) ) {
 			foreach ( $events as $event ) {
 				if ( strlen( $event->description ) > 225 ) {
-					$description = wordwrap( $event->description, 800 );
+					$description = wp_kses( $event->description, array(
+						'p' => array(),
+						'b' => array(),
+						'a' => array(
+							'href' => array(),
+							'title' => array(),
+						),
+						'strong' => array(),
+						'i' => array(),
+						'em' => array(),
+					) );
+					$description = wordwrap( $description, 800 );
 					$description = substr( $description, 0, strpos( $description, "\n" ) ) . '...';
 				} else {
 					$description = $event->description;
