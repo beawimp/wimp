@@ -232,7 +232,7 @@ function wimp_login_form() {
 		<div class="logins">
 			<div class="row-fluid">
 				<form method="post" action="<?php echo esc_url( home_url( '/wp-login.php?wpe-login=wimp' ) ); ?>" class="login-forms form-inline" name="loginform">
-					<input type="text" name="log" id="user_login" placeholder="username" tabindex="11" value="<?php echo esc_attr( stripslashes( $user_login ) ); ?>">
+					<input type="text" name="log" id="user_login" placeholder="username" tabindex="11" value="<?php echo ( ! empty( $user_login ) ? esc_attr( $user_login ) : '' ); ?>">
 					<input type="password" name="pwd" id="user_pass" placeholder="password" tabindex="12">
 					<input type="submit" name="wp-submit" value="Log In" class="btn btn-default" tabindex="13">
 					<input type="hidden" name="redirect_to" value="<?php echo esc_url( home_url() ); ?>" />
