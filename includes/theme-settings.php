@@ -17,7 +17,7 @@ if ( ! isset( $content_width ) )
 /**
  * Theme version... yup. Meow.
  */
-define( 'THEME_VERSION', '0.2' );
+define( 'THEME_VERSION', '0.3' );
 
 
 /**
@@ -161,22 +161,75 @@ function wimp_add_author_blocks( $content ) {
 }
 add_filter( 'the_content', 'wimp_add_author_blocks', 10 );
 
+/**
+ * Remove the Publish and Move to Trash buttons for authors only.
+ */
+function wimp_remove_post_crud_options_for_authors() {
+	if ( ! function_exists( 'EditFlow' ) ) {
+		return;
+	}
+
+	if ( ! EditFlow()->custom_status->is_whitelisted_page() ) {
+		return;
+	}
+
+	// Only hide the publish button from authors
+	$current_user = wp_get_current_user();
+	if ( 'author' !== $current_user->roles[0] ) {
+		return;
+	}
+	?>
+	<style>
+		#major-publishing-actions {
+			display: none;
+		}
+	</style>
+	<script>
+		( function( $ ) {
+			$( window ).ready( function() {
+				$( document.getElementById( 'major-publishing-actions' ) ).remove();
+			});
+		} )( jQuery );
+	</script>
+	<?php
+}
+add_action( 'admin_head', 'wimp_remove_post_crud_options_for_authors' );
+
+/**
+ * Limit post statuses for authors.
+ *
+ * @param  array $custom_statuses The existing custom status objects
+ *
+ * @return array $custom_statuses Our possibly modified set of custom statuses
+ */
+function wimp_limit_post_status_for_author( $custom_statuses ) {
+	$current_user = wp_get_current_user();
+
+	switch( $current_user->roles[0] ) {
+		case 'author':
+			$permitted_statuses = array(
+				'pitch',
+				'in-progress',
+			);
+
+			// Remove the custom status if it's not white-listed
+			foreach( $custom_statuses as $key => $custom_status ) {
+				if ( ! in_array( $custom_status->slug, $permitted_statuses ) ) {
+					unset( $custom_statuses[ $key ] );
+				}
+			}
+			break;
+	}
+	return $custom_statuses;
+}
+add_filter( 'ef_custom_status_list', 'wimp_limit_post_status_for_author' );
 
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/includes/template-tags.php';
 
-
 /**
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/includes/extras.php';
-
-
-/**
- * Load Jetpack compatibility file.
- * Disable for now until we are ready for Infinite Scroll.
- */
-// require get_template_directory() . '/includes/jetpack.php';
-
