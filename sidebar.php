@@ -11,7 +11,7 @@ get_currentuserinfo();
 	<aside class="widget">
 		<?php if ( ! $user_ID ) : ?>
 			<h3 class="title"><a href="<?php echo esc_url( home_url( '/members/sign-up/' ) ); ?>">Be A Wimp</a></h3>
-			<p><a href="<?php echo esc_url( home_url( '/members/sign-up/' ) ); ?>"</p>
+			<p><a href="<?php echo esc_url( home_url( '/members/sign-up/' ) ); ?>">Sign Up</a></p>
 		<?php else : ?>
 			<h3 class="title"><a href="<?php echo esc_url( home_url( '/members/' ) ); ?>">I'm A Wimp!</a></h3>
 			<p><a href="<?php echo esc_url( home_url( '/members/activity/' ) ); ?>">View Member Activity</a></p>
