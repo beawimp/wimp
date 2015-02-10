@@ -153,7 +153,7 @@ function wimp_load_template_part( $template_name, $part_name = null ) {
  * @return string
  */
 function wimp_add_author_blocks( $content ) {
-	if ( is_single() ) {
+	if ( is_single() && 'live-stream' !== get_post_type() ) {
 		$content .= wimp_load_template_part( 'partials/content', 'author-bio' );
 	}
 
@@ -223,6 +223,45 @@ function wimp_limit_post_status_for_author( $custom_statuses ) {
 	return $custom_statuses;
 }
 add_filter( 'ef_custom_status_list', 'wimp_limit_post_status_for_author' );
+
+function wimp_live_stream( $atts, $content = null ) {
+	// Attributes
+	$values = shortcode_atts(
+	array(
+		'video_id' => 0,
+	), $atts );
+
+	if ( 0 === $values['video_id'] ) {
+		// Get the latest post
+		$args = array(
+			'post_type'              => 'live-stream',
+			'post_status'            => 'publish',
+			'posts_per_page'         => -1,
+			'no_found_rows'          => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+		);
+		$post_query = new WP_Query( $args );
+
+		$post = $post_query->posts[0];
+	} else {
+		$post = get_post( (int) $values['video_id'] );
+	}
+
+	if ( ! $post ) {
+		return 'Post Not Found!';
+	}
+
+	ob_start();
+	?>
+	<h3><?php echo esc_html( $post->post_title ); ?></h3>
+	<p>Date: <?php echo date( 'D M j, Y', strtotime( $post->post_date ) ); ?> @ 7pm-9pm PST</p>
+	<?php
+	echo do_shortcode( wpautop( $post->post_content ) );
+	echo '<p><a href="' . esc_url( get_post_type_archive_link( 'live-stream' ) ) . '" class="button" style="padding:5px;">View Previous Live Streams!</a>';
+	return ob_get_clean();
+}
+add_shortcode( 'live-stream', 'wimp_live_stream' );
 
 /**
  * Custom template tags for this theme.

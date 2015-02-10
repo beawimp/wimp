@@ -46,6 +46,9 @@ get_header(); ?>
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
 							_e( 'Links', 'wimp' );
 
+						elseif ( is_post_type_archive( 'live-stream' ) ) :
+							_e( 'Live Stream Archive' );
+
 						else :
 							_e( 'Archives', 'wimp' );
 
