@@ -28,12 +28,5 @@ get_currentuserinfo();
 		<p><a href="<?php echo esc_url( home_url( '/jobs/add/' ) ); ?>">Post A Job</a></p>
 		<p><a href="<?php echo esc_url( home_url( '/wimp-referral-questionnaire/' ) ); ?>">Get Referrals</a></p>
 	</aside>
-	<aside class="widget">
-		<h3 class="title">Affiliates</h3>
-		<p>WIMP recommends A Small Orange for Web Hosting</p>
-		<a href="http://asmallorange.com/webhosting/RT/?a_aid=beawimp&amp;a_aid=beawimp&amp;a_bid=e945d0d1" target="_top">
-			<img src="https://affiliates.asmallorange.com/accounts/default1/banners/ASO-Banners_DD_250x250.gif" alt="" title="" width="250" height="250" />
-		</a>
-		<img style="border:0" src="https://affiliates.asmallorange.com/scripts/imp.php?a_aid=beawimp&amp;a_bid=e945d0d1" width="1" height="1" alt="" />
-	</aside>
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </section>
