@@ -6730,7 +6730,7 @@ body.admin-bar .top-header-wrapper {
   }
 }
 .main-header .logo a {
-  background: url('../images/wimp-logo.png') 0 0 no-repeat;
+  background: url('../images/wimp-logo.png?v=20150301') 0 0 no-repeat;
   width: 347px;
   height: 124px;
   display: block;
@@ -7353,7 +7353,7 @@ body.admin-bar .top-header-wrapper {
   .blog .content-area,
   .single .content-area {
     float: left;
-    width: 75%;
+    width: 100%;
   }
 }
 @media (min-width: 992px) {
@@ -7424,6 +7424,10 @@ body.admin-bar .top-header-wrapper {
 }
 .archive .main-body article:after {
   clear: both;
+}
+.entry-content .wp-caption {
+  max-width: 96% !important;
+  width: auto !important;
 }
 .jb-banner {
   background: #115ba0;
