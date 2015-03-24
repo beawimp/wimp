@@ -87,11 +87,11 @@ add_action( 'after_setup_theme', 'wimp_setup' );
 function wimp_theme_resources() {
 	// Load only on the front-end
 	if ( ! is_admin() ) {
-		wp_enqueue_style( 'wimp-google-font', 'http://fonts.googleapis.com/css?family=Lustria|Duru+Sans|Quicksand:300,400,700' );
+		wp_enqueue_style( 'wimp-google-font', 'https://fonts.googleapis.com/css?family=Lustria|Duru+Sans|Quicksand:300,400,700' );
 		wp_enqueue_style( 'wimp-styles', get_stylesheet_directory_uri() . '/css/app.min.css', null, THEME_VERSION );
 
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, THEME_VERSION );
+		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', null, THEME_VERSION );
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'wimp-scripts', get_stylesheet_directory_uri() . '/js/build/app.min.js', array( 'jquery' ), THEME_VERSION, false );
 	}

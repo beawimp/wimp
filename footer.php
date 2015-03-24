@@ -21,7 +21,7 @@
 							<li><a href="https://www.facebook.com/groups/northbaywebpros/" class="facebook">Facebook</a></li>
 							<li><a href="https://twitter.com/beawimp" class="twitter">Twitter</a></li>
 							<li><a href="<?php bloginfo( 'atom_url' ); ?>" class="rss">RSS</a></li>
-							<li><a href="http://www.meetup.com/beawimp/" class="meetup">Meetup</a></li>
+							<li><a href="https://www.meetup.com/beawimp/" class="meetup">Meetup</a></li>
 							<li><a href="https://plus.google.com/105428803685413967800" rel="publisher" style="display:none">Google+</a></li>
 						</ul>
 					</div>
