@@ -4,8 +4,12 @@
  *
  * Used for redirecting a specific user to their listing.
  */
-if ( ! wmd_is_wimp_plus_member() ) {
+if ( ! function_exists( 'wmd_is_wimp_plus_member' ) ) {
+	wp_redirect( esc_url( home_url() ) );
+	exit();
+} elseif ( ! bp_member_is_loggedin_user() || ! wmd_is_wimp_plus_member() ) {
 	wp_redirect( esc_url( wmd_get_listing_manager_url() ) );
+	exit();
 }
 
 $post = wmd_get_listing_by_user_id( get_current_user_id() );
