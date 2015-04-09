@@ -76,6 +76,13 @@ if ( ! function_exists( 'wimp_setup' ) ) :
 endif; // wimp_setup
 add_action( 'after_setup_theme', 'wimp_setup' );
 
+function custom_clean_head() {
+	remove_action('wp_head', 'wp_print_scripts');
+	remove_action('wp_head', 'wp_print_head_scripts', 9);
+	remove_action('wp_head', 'wp_enqueue_scripts', 1);
+}
+add_action( 'wp_enqueue_scripts', 'custom_clean_head' );
+
 
 /**
  * Add our themes css styles and scripts.
