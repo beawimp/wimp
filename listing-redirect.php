@@ -4,6 +4,10 @@
  *
  * Used for redirecting a specific user to their listing.
  */
+if ( ! wmd_is_wimp_plus_member() ) {
+	wp_redirect( esc_url( wmd_get_listing_manager_url() ) );
+}
+
 $post = wmd_get_listing_by_user_id( get_current_user_id() );
 
 if ( ! isset( $post->ID ) || empty( $post->ID ) ) {
