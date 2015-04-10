@@ -81,7 +81,7 @@ function custom_clean_head() {
 	remove_action('wp_head', 'wp_print_head_scripts', 9);
 	remove_action('wp_head', 'wp_enqueue_scripts', 1);
 }
-add_action( 'wp_enqueue_scripts', 'custom_clean_head' );
+//add_action( 'wp_enqueue_scripts', 'custom_clean_head' );
 
 
 /**
