@@ -7,7 +7,7 @@
 if ( ! function_exists( 'wmd_is_wimp_plus_member' ) ) {
 	wp_redirect( esc_url( home_url() ) );
 	exit();
-} elseif ( ! bp_member_is_loggedin_user() || ! wmd_is_wimp_plus_member() ) {
+} elseif ( ! is_user_logged_in() || ! wmd_is_wimp_plus_member() ) {
 	wp_redirect( esc_url( wmd_get_listing_manager_url() ) );
 	exit();
 }
