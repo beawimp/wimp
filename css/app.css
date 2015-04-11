@@ -7334,6 +7334,9 @@ body.admin-bar .top-header-wrapper {
 #buddypress div.pagination .pagination-links a {
   font-size: 100%;
 }
+#buddypress div#item-header div#item-header-content {
+  width: 80.4%;
+}
 .entry-title {
   margin-top: 0;
 }
