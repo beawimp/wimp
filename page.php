@@ -16,7 +16,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php if ( is_page( 'jobs' ) ) : ?>
+			<?php if ( is_page( 'jobs' ) && bp_is_blog_page() ) : ?>
 				<h1>WIMP Job Board</h1>
 
 				<div class="jb-banner"><a href="<?php echo esc_url( home_url( '/jobs/' ) ); ?>">View Jobs</a> <a href="<?php echo esc_url( home_url( '/jobs/add/' ) ); ?>">Post A Job</a> <a href="<?php echo esc_url( home_url( '/jobs/advanced-search/' ) ); ?>">Advanced Search</a></div>
