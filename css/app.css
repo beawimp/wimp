@@ -7258,6 +7258,8 @@ body.admin-bar .top-header-wrapper {
   position: absolute;
   top: 5px;
   right: 16px;
+  margin: 0;
+  float: none;
 }
 #buddypress div.dir-search input[type="text"] {
   padding: 5px;
