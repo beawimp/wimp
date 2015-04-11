@@ -7254,6 +7254,11 @@ body.admin-bar .top-header-wrapper {
   margin: 0;
   padding: 5px;
 }
+#buddypress div.dir-search {
+  position: absolute;
+  top: 5px;
+  right: 16px;
+}
 #buddypress div.dir-search input[type="text"] {
   padding: 5px;
   font-weight: normal;
