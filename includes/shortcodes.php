@@ -19,7 +19,7 @@ if ( class_exists( 'WIMP_Meetup' ) ) {
 		);
 		$events = wimp_get_events( $options, $data['limit'] );
 
-		if ( ! empty( $events ) && is_array( $events ) ) {
+		if ( is_array( $events ) && ! is_null( $events[0] ) ) {
 			foreach ( $events as $event ) {
 				if ( strlen( $event->description ) > 225 ) {
 					$description = wp_kses( $event->description, array(
