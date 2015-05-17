@@ -6,8 +6,8 @@
  * @package bbPress
  * @subpackage Theme
  */
-
-$is_wimp_plus = ( bbp_is_forum_archive() && true === is_object( pmpro_getMembershipLevelForUser( get_current_user_id() ) ) );
+$user_id = get_current_user_id();
+$is_wimp_plus = ( bbp_is_forum_archive() && ( is_super_admin( $user_id ) || true === is_object( pmpro_getMembershipLevelForUser( $user_id ) ) ) );
 ?>
 
 <ul id="bbp-forum-<?php bbp_forum_id(); ?>" <?php bbp_forum_class(); ?>>
@@ -66,11 +66,11 @@ $is_wimp_plus = ( bbp_is_forum_archive() && true === is_object( pmpro_getMembers
 
 		<?php do_action( 'bbp_theme_before_forum_freshness_link' ); ?>
 		<?php
-		if ( bbp_is_forum_archive() && false === is_object( pmpro_getMembershipLevelForUser( get_current_user_id() ) ) ) {
+		if ( $is_wimp_plus ) {
+			bbp_forum_freshness_link();
+		} else {
 			$link = bbp_get_forum_freshness_link();
 			echo preg_replace( '/<a href=\"(.*?)\">(.*?)<\/a>/', "\\2", $link );
-		} else {
-			bbp_forum_freshness_link();
 		}
 		?>
 
