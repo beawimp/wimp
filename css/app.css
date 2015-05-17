@@ -5954,6 +5954,21 @@ td.visible-print {
     display: none !important;
   }
 }
+.bbp-the-content-wrapper {
+  border: 1px solid #dedede;
+}
+.bbp-topic-form {
+  margin-top: 40px;
+}
+.bbp-form {
+  background-color: #fafafa;
+}
+.bbp-form legend {
+  background-color: #fff;
+}
+.subscription-toggle {
+  float: right;
+}
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
