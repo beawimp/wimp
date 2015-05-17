@@ -72,17 +72,11 @@ if ( ! function_exists( 'wimp_setup' ) ) :
 		if ( ! current_user_can( 'activate_plugins' ) && ! is_admin() ) {
 			show_admin_bar( false );
 		}
+
+		remove_action('wp_head', 'wp_generator');
 	}
 endif; // wimp_setup
 add_action( 'after_setup_theme', 'wimp_setup' );
-
-function custom_clean_head() {
-	remove_action('wp_head', 'wp_print_scripts');
-	remove_action('wp_head', 'wp_print_head_scripts', 9);
-	remove_action('wp_head', 'wp_enqueue_scripts', 1);
-}
-//add_action( 'wp_enqueue_scripts', 'custom_clean_head' );
-
 
 /**
  * Add our themes css styles and scripts.
@@ -105,6 +99,35 @@ function wimp_theme_resources() {
 }
 add_action( 'wp_enqueue_scripts', 'wimp_theme_resources' );
 
+/**
+ * Output some custom header information
+ */
+function wimp_header() {
+	if ( 'beawimp.org' !== $_SERVER['SERVER_NAME'] ) {
+		return;
+	}
+
+	echo "\t<script>
+		// Google Analytics, obviously :P
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-47611761-1', 'beawimp.org');
+		ga('send', 'pageview');
+
+		// Pingdom
+		var _prum = [['id', '553152f5abe53ddc1c46c90c'], ['mark', 'firstbyte', (new Date()).getTime()]];
+		(function() {
+			var s = document.getElementsByTagName('script')[0], p = document.createElement('script');
+			p.async = 'async';
+			p.src = '//rum-static.pingdom.net/prum.min.js';
+			s.parentNode.insertBefore(p, s);
+		})();
+	</script>\n";
+}
+add_action( 'wp_head', 'wimp_header', 100 );
 
 /**
  * Register widgetized area and update sidebar with default widgets
