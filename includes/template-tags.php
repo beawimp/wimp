@@ -235,7 +235,7 @@ function wimp_login_form() {
 					<input type="text" name="log" id="user_login" placeholder="username" tabindex="11" value="<?php echo ( ! empty( $user_login ) ? esc_attr( $user_login ) : '' ); ?>">
 					<input type="password" name="pwd" id="user_pass" placeholder="password" tabindex="12">
 					<input type="submit" name="wp-submit" value="Log In" class="btn btn-default" tabindex="13">
-					<input type="hidden" name="redirect_to" value="<?php echo esc_url( home_url() ); ?>" />
+					<input type="hidden" name="redirect_to" value="<?php echo esc_url( get_permalink() ); ?>" />
 					<input type="hidden" name="user-cookie" value="1" />
 				</form>
 				<div class="login-meta">
@@ -244,9 +244,28 @@ function wimp_login_form() {
 			</div>
 		</div>
 	<?php else : ?>
-		<div class="logins text-right">
+		<div class="logins text-right<?php echo ( is_user_logged_in() ) ? ' user-logged-in' : ''; ?>">
 			<div class="row-fluid">
-				<p class="logged-in"><span class="name">Welcome, <a href="<?php echo bp_loggedin_user_domain(); ?>"><?php echo esc_html( $current_user->display_name ); ?></a>! <a href="<?php echo bp_loggedin_user_domain(); ?>"><?php echo bp_core_fetch_avatar( array( 'item_id' => $current_user->ID, 'type' => 'thumb', 'width' => 26, 'height' => 26 ) ); ?></a></span> <span>&nbsp;|&nbsp;</span> <span class="signout"><a href="<?php echo esc_url( wp_logout_url( home_url() ) ); ?>" class="signout">sign out</a></span></p>
+				<?php do_action( 'wimp_logged_in_notice' ); ?>
+				<p class="logged-in">
+					<span class="name">
+						Welcome, <a href="<?php echo bp_loggedin_user_domain(); ?>"><?php echo esc_html( $current_user->display_name ); ?></a>!
+						<a href="<?php echo bp_loggedin_user_domain(); ?>">
+							<?php echo bp_core_fetch_avatar( array(
+								'item_id' => $current_user->ID,
+								'type'    => 'thumb',
+								'width'   => 26,
+								'height'  => 26
+							) ); ?>
+						</a>
+					</span>
+					<span>&nbsp;|&nbsp;</span>
+					<span class="signout">
+						<a href="<?php echo esc_url( wp_logout_url( home_url() ) ); ?>" class="signout">
+							sign out
+						</a>
+					</span>
+				</p>
 			</div>
 		</div>
 	<?php endif;

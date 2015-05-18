@@ -5969,6 +5969,9 @@ td.visible-print {
 .subscription-toggle {
   float: right;
 }
+#bbpress-forums .bbp-forums-list li {
+  display: block;
+}
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -6625,6 +6628,9 @@ code {
   height: 33px;
   border-radius: 0;
 }
+.top-header-wrapper .logins.user-logged-in {
+  top: 0;
+}
 .top-header-wrapper .logins .logged-in {
   font-size: 16px;
   position: relative;
@@ -6863,7 +6869,6 @@ body.admin-bar .top-header-wrapper {
   }
   .top-header-wrapper .logins .logged-in {
     top: 0;
-    padding: 11px 0;
   }
   .top-header-wrapper .login-meta {
     top: 0;
@@ -6932,6 +6937,9 @@ body.admin-bar .top-header-wrapper {
   .top-header-wrapper .logins .logged-in span.name,
   .top-header-wrapper .logins .logged-in span.signout {
     display: block;
+  }
+  .top-header-wrapper .wmd-wimp-plus-notice {
+    text-align: center;
   }
   .top-header-wrapper .login-meta {
     text-align: center;

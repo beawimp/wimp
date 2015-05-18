@@ -7,7 +7,7 @@
  * @subpackage Theme
  */
 $user_id = get_current_user_id();
-$is_wimp_plus = ( bbp_is_forum_archive() && ( is_super_admin( $user_id ) || true === is_object( pmpro_getMembershipLevelForUser( $user_id ) ) ) );
+$is_wimp_plus = ( true === is_object( pmpro_getMembershipLevelForUser( $user_id ) ) );
 ?>
 
 <ul id="bbp-forum-<?php bbp_forum_id(); ?>" <?php bbp_forum_class(); ?>>
@@ -50,7 +50,11 @@ $is_wimp_plus = ( bbp_is_forum_archive() && ( is_super_admin( $user_id ) || true
 
 		<?php do_action( 'bbp_theme_before_forum_sub_forums' ); ?>
 
-		<?php bbp_list_forums(); ?>
+		<?php bbp_list_forums( array(
+			'link_before'      => '<li class="bbp-forum no-wrap">',
+			'separator'        => '',
+			'show_reply_count' => false,
+		) ); ?>
 
 		<?php do_action( 'bbp_theme_after_forum_sub_forums' ); ?>
 
