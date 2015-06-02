@@ -89,3 +89,29 @@ function wimp_remove_query_strings( $src ) {
 }
 add_filter( 'script_loader_src', 'wimp_remove_query_strings', 15, 1 );
 add_filter( 'style_loader_src', 'wimp_remove_query_strings', 15, 1 );
+
+
+function wimp_login_style() {
+	?>
+	<style type="text/css">
+		html, body.login {
+			background:#fff;
+		}
+		#login h1 a {
+			background:url( '<?php echo esc_url( get_stylesheet_directory_uri() . '/images/wimp-logo.png?v=20150301' ); ?>' ) 0 0 no-repeat;
+			width:347px;
+			height:124px;
+			display:block;
+			font: ~"0/0" a;
+			color: transparent;
+			text-shadow: none;
+			background-color: transparent;
+			border: 0;
+		}
+		#loginform {
+			background-color:#f5f5f5;
+		}
+	</style>
+	<?php
+}
+add_action( 'login_enqueue_scripts', 'wimp_login_style' );

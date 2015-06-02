@@ -219,27 +219,19 @@ function wimp_categorized_blog() {
 	}
 }
 
-
 /**
  * Adds the login form!
  * @return html
  */
 function wimp_login_form() {
-	global $current_user, $user_ID, $user_identity;
+	global $current_user, $user_ID;
 	get_currentuserinfo();
 
 	if ( ! $user_ID ) : ?>
 		<div class="logins">
 			<div class="row-fluid">
-				<form method="post" action="<?php echo esc_url( home_url( '/wp-login.php' ) ); ?>" class="login-forms form-inline" name="loginform">
-					<input type="text" name="log" id="user_login" placeholder="username" tabindex="11" value="<?php echo ( ! empty( $user_login ) ? esc_attr( $user_login ) : '' ); ?>">
-					<input type="password" name="pwd" id="user_pass" placeholder="password" tabindex="12">
-					<input type="submit" name="wp-submit" value="Log In" class="btn btn-default" tabindex="13">
-					<input type="hidden" name="redirect_to" value="<?php echo esc_url( get_permalink() ); ?>" />
-					<input type="hidden" name="user-cookie" value="1" />
-				</form>
 				<div class="login-meta">
-					<a href="<?php echo esc_url( home_url( '/wp-login.php?action=lostpassword' ) ); ?>">Forgot Password</a> <span>|</span> <a href="<?php echo esc_url( home_url( '/members/sign-up/' ) ); ?>">Be a WIMP</a>
+					<a href="<?php echo esc_url( home_url( '/wp-login.php' ) ); ?>">Log in</a> <span>|</span> <a href="<?php echo esc_url( home_url( '/joining-wimp/' ) ); ?>">Sign up</a>
 				</div>
 			</div>
 		</div>

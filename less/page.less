@@ -1,3 +1,11 @@
+.page-template-page-wide {
+	.main-wrapper {
+		background: #fff url( '' );
+	}
+	.main-body, .main-footer {
+		width:100%;
+	}
+}
 .entry-title {
 	margin-top:0;
 	a {
@@ -8,6 +16,114 @@
 		&:hover {
 			text-decoration:none;
 			border:none;
+		}
+	}
+}
+
+// WIMP Membership page
+.page-id-473, .page-id-728 {
+	.ddd {background: #ddd; padding:20px 0;}
+	.ddd:first-child {margin-top:-10px;}
+
+	.WIMPplus_title {
+		background: #1c1c1c;
+		color: #ddd;
+		padding:30px;
+		border-radius: 5px;
+		img {
+			margin-bottom:18px;
+		}
+		p {
+			margin:0;
+			text-align: center;
+			font-family: 'Quicksand', sans-serif;
+			font-size:18px;
+		}
+		p:last-child {
+			font-family: 'Duru Sans', sans-serif;
+			font-size:16px;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+	.fancy-wimp-button {
+		background: #1681bc;
+		background: -moz-linear-gradient(top,  #1681bc 0%, #0e5d9f 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1681bc), color-stop(100%,#0e5d9f));
+		background: -webkit-linear-gradient(top,  #1681bc 0%,#0e5d9f 100%);
+		background: -o-linear-gradient(top,  #1681bc 0%,#0e5d9f 100%);
+		background: -ms-linear-gradient(top,  #1681bc 0%,#0e5d9f 100%);
+		background: linear-gradient(to bottom,  #1681bc 0%,#0e5d9f 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1681bc', endColorstr='#0e5d9f',GradientType=0 );
+		color:#fff;
+		display:inline-block;
+		padding:10px 37px;
+		font-size:16px;
+		margin-top:24px;
+		border-radius:5px;
+	}
+
+	.membership .col-sm-6 {
+		position: relative !important;
+		img {
+			margin-top:     3em;
+			vertical-align: middle !important;
+		}
+	}
+
+	.membership .col-sm-4 {
+		padding:30px;
+		a {
+			display:block;
+		}
+		p a {
+			display:inline;
+		}
+		.member-button {
+			background:    #1c1c1c;
+			text-align:    center;
+			border-radius: 5px;
+			margin-top:0;
+			a {
+				color:   #fff;
+				padding: 5px;
+				display: block;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.wimp-plus-description {
+		h2 {
+			font-weight: bold;
+		}
+		p {
+			line-height: 2;
+		}
+	}
+
+	.plus {
+		font-size: 25px;
+		font-weight: bold;
+	}
+	.plus a {
+		color: #1c1c1c;
+		background: transparent !important;
+	}
+	.plus a:hover {
+		text-decoration: none;
+	}
+	.jump-link {
+		display:    block;
+		position:   relative;
+		top:        -52px;
+		visibility: hidden;
+	}
+	&.admin-bar {
+		.jump-link  {
+			top:-80px;
 		}
 	}
 }
